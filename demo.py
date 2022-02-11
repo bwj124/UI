@@ -326,9 +326,13 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.st_dialog.setVisible(False)
 
 
-if __name__ == '__main__':
+def main():
     app = QApplication(sys.argv)
     myWin = MyWindow()
     myWin.show()
     sys.exit(app.exec_())
-    a = [1, 2, ]
+
+
+if __name__ == '__main__':
+    main()
+
