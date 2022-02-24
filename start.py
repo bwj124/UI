@@ -48,7 +48,13 @@ class MyGuide(guideWin, QtWidgets.QDialog):
 def main_this():
     app = QApplication(sys.argv)
     myBegin = MyGuide()
+    qssStyle = '''
+            QPushButton {
+                background-color:red
+            }
+        '''
     myBegin.show()
+    # myBegin.setStyle()
     sys.exit(app.exec_())
 
 
