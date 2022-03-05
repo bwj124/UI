@@ -118,6 +118,33 @@ class MySTDialog(ST_Dialog, QtWidgets.QDialog):
         self.setupUi(self)
 
 
+# 自定义可点击的Label类
+class MyQLabel(QtWidgets.QLabel):
+    # 自定义信号, 注意信号必须为类属性
+    button_clicked_signal = QtCore.pyqtSignal()
+
+    # signal = QtCore.pyqtSignal()
+
+    def __init__(self, parent=None):
+        super(MyQLabel, self).__init__(parent)
+        # self.signal.connect(self.signalCall)
+
+    # def mousePressEvent(self, ev: QtGui.QMouseEvent):
+    #     self.signal.emit()
+
+    # def signalCall(self):
+    #
+    def mouseReleaseEvent(self, QMouseEvent):
+        self.button_clicked_signal.emit()
+
+    # def mousePressEvent(self, ev):
+    #     self.clicked.emit()
+
+    # 可在外部与槽函数连接
+    def connect_customized_slot(self, func):
+        self.button_clicked_signal.connect(func)
+
+
 class MyWindow(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super(MyWindow, self).__init__(parent=None)
@@ -139,6 +166,10 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.pushButton_15.clicked.connect(self.stop)
         self.statusbar.showMessage('初始化完成')
 
+        # self.label_15 = MyQLabel(self.scrollArea)
+        # self.label_15.connect_customized_slot(self.showHistory)
+        # self.label_15.signal
+
         self.timer = QTimer(self)
         self.timer.timeout.connect(self.update_statusbar)
         self.timer.start(2000)
@@ -146,6 +177,15 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.count_object = 1
         # self.timer2 = QTimer()
         # self.time.time
+
+        # 创建异常图片的列表
+        # self.list_widget = QtWidgets.QListWidget()
+        # self.list_widget.setFlow(0)
+        # self.list_widget(QTCore.QSize(150, 143))
+        # self.list_widget.itemSelectionChanged.connect(self.show_bigPicture)
+        # self.fault_pictures = []
+        # self.currentImgIdx = 0
+        # self.currentImg = None
 
     def showMainWindow(self):
         self.stackedWidget.setCurrentIndex(0)
@@ -158,6 +198,15 @@ class MyWindow(QMainWindow, Ui_MainWindow):
 
     def showNewModel(self):
         self.stackedWidget.setCurrentIndex(3)
+
+    # 显示异常图片大图
+    def show_bigPicture(self):
+        self.currentImgIdx = self.list_widget.currentIndex().column()
+        if self.currentImgIdx in range(len(self.image_paths)):
+            self.currentImg = QPixmap(self.image_paths[self.currentImgIdx]).scaledToHeight(400)
+            self.show_bigPicture_dialog.setPixmap(self.currentImg)
+            self.show_bigPicture_dialog.setVisible(True)
+        pass
 
     def dialog_create_task(self):
         self.ct_dialog = MyCTDialog()
@@ -299,6 +348,13 @@ class MyWindow(QMainWindow, Ui_MainWindow):
             index_fault_warn[self.count_fault-1].setText(f'异常{self.count_fault}')
             index_fault_percent[self.count_fault-1].setText(f'{int(float(info_list[1])*10000)/100.0}%')
         else:
+            # my_push_button = QtWidgets.QPushButton(self.scrollArea)
+            # my_push_button.setIcon(QtGui.QIcon(filename+'.jpg'))
+            # my_push_button.setMinimumSize(150, 143)
+            # my_push_button.setMaximumSize(150, 143)
+            # my_push_button.setIconSize(QtCore.QSize(150, 143))
+            # my_push_button.clicked.connect(self.showHistory)
+            # self.horizontalLayout_6.addWidget(my_push_button)
             label_new = QLabel(self.scrollArea)
             label_new.setObjectName("label_new")
             label_new.setMinimumSize(150, 143)
@@ -310,13 +366,16 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.label_14.setText(f'已检测 产品{self.count_object}件 异常{self.count_fault}处')
         print('有缺陷', filename)
 
-
-
     def update_statusbar(self):
         if dict['batch'] == -1:
             self.statusbar.showMessage('请选择或创建一个任务以运行')
         else:
             self.statusbar.showMessage('当前任务为：' + dict['task'])
+
+    # 点击异常图片放大效果
+    def enlarge_img(self):
+        self.groupBox.setVisible(False)
+        # self.groupBox_2.setVisible(False)
 
     def closeEvent(self, a0: QtGui.QCloseEvent) -> None:
         self.ct_dialog.setVisible(False)

@@ -14,7 +14,7 @@
    <string>铸件检测系统</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color:rgb(240, 240, 240)</string>
+   <string notr="true">background-color:rgb(36, 36, 36)</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout_14">
@@ -33,11 +33,11 @@
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(240, 240, 240);
-/*color: rgb(255,255,255);*/
-border-color: rgb(113, 120, 126);
+       <string notr="true">background-color: rgb(68, 70, 74);
+color: rgb(255,255,255);
+border-color: rgb(134, 89, 52);
 border-style: solid;
-border-width: 2px;border-radius:5px;</string>
+border-width: 3px;border-radius:5px;</string>
       </property>
       <property name="inputMethodHints">
        <set>Qt::ImhNone</set>
@@ -59,14 +59,14 @@ border-width: 2px;border-radius:5px;</string>
       </property>
       <widget class="QWidget" name="page">
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(240, 240, 240);
+        <string notr="true">border-color: rgb(129, 242, 255);
 border-width: 0px;border-radius:5px;</string>
        </property>
        <layout class="QHBoxLayout" name="horizontalLayout_36">
         <item>
          <widget class="QWidget" name="widget" native="true">
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(240, 240, 240);</string>
+           <string notr="true">background-color:rgb(59, 61, 65);</string>
           </property>
           <layout class="QHBoxLayout" name="horizontalLayout">
            <item>
@@ -96,7 +96,7 @@ border-width: 0px;border-radius:5px;</string>
                 </font>
                </property>
                <property name="styleSheet">
-                <string notr="true">background-color: rgb(230, 230, 230);
+                <string notr="true">background-color: rgb(68, 70, 74);
 broder-width : 0px;border-radius:5px;</string>
                </property>
                <property name="text">
@@ -134,7 +134,7 @@ broder-width : 0px;border-radius:5px;</string>
                   </font>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true">background-color: rgb(220, 220, 220);
+                  <string notr="true">background-color: rgb(68, 70, 74);
 border-radius:5px;</string>
                  </property>
                  <property name="text">
@@ -196,7 +196,7 @@ border-radius:5px;</string>
                   </font>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true">background-color: rgb(220, 220, 220);border-radius:5px;</string>
+                  <string notr="true">background-color: rgb(68, 70, 74);border-radius:5px;</string>
                  </property>
                  <property name="text">
                   <string>停止</string>
@@ -226,8 +226,8 @@ border-radius:5px;</string>
                 </font>
                </property>
                <property name="styleSheet">
-                <string notr="true">background-color: rgb(240, 240, 240);
-border-color: rgb(113, 120, 126);;
+                <string notr="true">background-color: rgb(59, 61, 65);
+border-color: rgb(134, 89, 52);
 border-style: solid;
 border-width: 1px;border-radius:5px;</string>
                </property>
@@ -267,7 +267,7 @@ border-width: 1px;border-radius:5px;</string>
                      </font>
                     </property>
                     <property name="styleSheet">
-                     <string notr="true">border-color: rgb(113, 120, 126);</string>
+                     <string notr="true">background-color: rgb(68, 70, 74);</string>
                     </property>
                     <property name="text">
                      <string>视频2</string>
@@ -289,7 +289,7 @@ border-width: 1px;border-radius:5px;</string>
                      </font>
                     </property>
                     <property name="styleSheet">
-                     <string notr="true">border-color: rgb(113, 120, 126);</string>
+                     <string notr="true">background-color: rgb(68, 70, 74);</string>
                     </property>
                     <property name="text">
                      <string>视频6</string>
@@ -311,7 +311,7 @@ border-width: 1px;border-radius:5px;</string>
                      </font>
                     </property>
                     <property name="styleSheet">
-                     <string notr="true">border-color: rgb(113, 120, 126);</string>
+                     <string notr="true">background-color: rgb(68, 70, 74);</string>
                     </property>
                     <property name="text">
                      <string>视频8</string>
@@ -333,7 +333,7 @@ border-width: 1px;border-radius:5px;</string>
                      </font>
                     </property>
                     <property name="styleSheet">
-                     <string notr="true">border-color: rgb(113, 120, 126);</string>
+                     <string notr="true">background-color: rgb(68, 70, 74);</string>
                     </property>
                     <property name="frameShape">
                      <enum>QFrame::StyledPanel</enum>
@@ -367,7 +367,7 @@ border-width: 1px;border-radius:5px;</string>
                      </font>
                     </property>
                     <property name="styleSheet">
-                     <string notr="true">border-color: rgb(113, 120, 126);</string>
+                     <string notr="true">background-color: rgb(68, 70, 74);</string>
                     </property>
                     <property name="text">
                      <string>视频5</string>
@@ -389,7 +389,7 @@ border-width: 1px;border-radius:5px;</string>
                      </font>
                     </property>
                     <property name="styleSheet">
-                     <string notr="true">border-color: rgb(113, 120, 126);</string>
+                     <string notr="true">background-color: rgb(68, 70, 74);</string>
                     </property>
                     <property name="text">
                      <string>视频7</string>
@@ -411,7 +411,7 @@ border-width: 1px;border-radius:5px;</string>
                      </font>
                     </property>
                     <property name="styleSheet">
-                     <string notr="true">border-color: rgb(113, 120, 126);</string>
+                     <string notr="true">background-color: rgb(68, 70, 74);</string>
                     </property>
                     <property name="text">
                      <string>视频4</string>
@@ -435,7 +435,7 @@ border-width: 1px;border-radius:5px;</string>
                      </font>
                     </property>
                     <property name="styleSheet">
-                     <string notr="true">border-color: rgb(113, 120, 126);</string>
+                     <string notr="true">background-color: rgb(68, 70, 74);</string>
                     </property>
                     <property name="text">
                      <string>视频3</string>
@@ -473,8 +473,8 @@ border-width: 1px;border-radius:5px;</string>
                 <enum>Qt::LeftToRight</enum>
                </property>
                <property name="styleSheet">
-                <string notr="true">background-color: rgb(240, 240, 240);
-border-color: rgb(113, 120, 126);
+                <string notr="true">background-color: rgb(68, 70, 74);
+border-color: rgb(134, 89, 52);
 border-style: solid;
 border-width: 1px;border-radius:5px;</string>
                </property>
@@ -503,8 +503,7 @@ border-width: 1px;border-radius:5px;</string>
                    </size>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">border-width: 0px;
-background-color: rgb(230, 230, 230);</string>
+                   <string notr="true">border-width: 0px;</string>
                   </property>
                   <property name="verticalScrollBarPolicy">
                    <enum>Qt::ScrollBarAlwaysOff</enum>
@@ -520,7 +519,7 @@ background-color: rgb(230, 230, 230);</string>
                     <rect>
                      <x>0</x>
                      <y>0</y>
-                     <width>862</width>
+                     <width>860</width>
                      <height>169</height>
                     </rect>
                    </property>
@@ -1697,8 +1696,8 @@ background-color: rgb(255, 255, 255);</string>
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:rgba(240, 240, 240,0);
-/*color: rgb(255, 255, 255);*/
+    <string notr="true">background-color: rgb(36, 36, 36);
+color: rgb(255, 255, 255);
 </string>
    </property>
    <property name="floating">
@@ -1712,7 +1711,7 @@ background-color: rgb(255, 255, 255);</string>
    </attribute>
    <widget class="QWidget" name="dockWidgetContents_3">
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(240, 240, 240);</string>
+     <string notr="true">background-color: rgb(59, 61, 65)</string>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_4">
      <item>
@@ -1750,7 +1749,7 @@ background-color: rgb(255, 255, 255);</string>
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color: rgb(230, 230, 230);border-radius:5px;</string>
+          <string notr="true">background-color: rgb(155, 183, 220);border-radius:5px;</string>
          </property>
          <property name="text">
           <string>搜索</string>
@@ -1769,7 +1768,7 @@ background-color: rgb(255, 255, 255);</string>
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color: rgba(220, 220, 220, 150);/*color: rgb(255,255,255);*/border-radius:5px;border-style:solid;border-width:2px;border-color: rgb(113, 120, 126);
+          <string notr="true">background-color: rgba(68, 70, 74, 150);color: rgb(255,255,255);border-radius:5px;border-style:solid;border-width:2px;border-color: rgb(134, 89, 52)
 </string>
          </property>
          <property name="frameShape">
@@ -1832,7 +1831,7 @@ p, li { white-space: pre-wrap; }
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">background-color: rgb(220, 220, 220);border-radius:5px;</string>
+            <string notr="true">background-color: rgb(65, 97, 136);border-radius:5px;</string>
            </property>
            <property name="text">
             <string>已处理</string>
@@ -1857,7 +1856,7 @@ p, li { white-space: pre-wrap; }
        <item>
         <widget class="QTextBrowser" name="textBrowser_2">
          <property name="styleSheet">
-          <string notr="true">background-color: rgba(220, 220, 220, 150);/*color: rgb(255,255,255);*/border-radius:5px;border-style:solid;border-width:2px;border-color: rgb(113, 120, 126);
+          <string notr="true">background-color: rgba(68, 70, 74, 150);color: rgb(255,255,255);border-radius:5px;border-style:solid;border-width:2px;border-color: rgb(134, 89, 52)
 </string>
          </property>
          <property name="frameShape">
@@ -1914,7 +1913,7 @@ p, li { white-space: pre-wrap; }
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">background-color: rgb(220, 220, 220);border-radius:5px;</string>
+            <string notr="true">background-color: rgb(65, 97, 136);border-radius:5px;</string>
            </property>
            <property name="text">
             <string>已处理</string>
@@ -1939,7 +1938,7 @@ p, li { white-space: pre-wrap; }
        <item>
         <widget class="QTextBrowser" name="textBrowser_3">
          <property name="styleSheet">
-          <string notr="true">background-color: rgba(220, 220, 220, 150);/*color: rgb(255,255,255);*/border-radius:5px;border-style:solid;border-width:2px;border-color: rgb(113, 120, 126);
+          <string notr="true">background-color: rgba(68, 70, 74, 150);color: rgb(255,255,255);border-radius:5px;border-style:solid;border-width:2px;border-color: rgb(134, 89, 52)
 </string>
          </property>
          <property name="frameShape">
@@ -1996,7 +1995,7 @@ p, li { white-space: pre-wrap; }
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">background-color: rgb(220, 220, 220);border-radius:5px;</string>
+            <string notr="true">background-color: rgb(65, 97, 136);border-radius:5px;</string>
            </property>
            <property name="text">
             <string>已处理</string>
@@ -2048,8 +2047,7 @@ p, li { white-space: pre-wrap; }
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:rgba(240, 240, 240, 0);
-/*color:rgb(255,255,255);*/</string>
+    <string notr="true">background-color: rgb(36, 36, 36);color: rgb(255,255,255);</string>
    </property>
    <property name="windowTitle">
     <string>警报历史</string>
@@ -2059,13 +2057,13 @@ p, li { white-space: pre-wrap; }
    </attribute>
    <widget class="QWidget" name="dockWidgetContents_4">
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(240, 240, 240);</string>
+     <string notr="true">background-color: rgb(59, 61, 65);</string>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_3">
      <item>
       <widget class="QWidget" name="widget_3" native="true">
        <property name="styleSheet">
-        <string notr="true">background-color: rgba(220, 220, 220, 150);border-radius:5px;border-color: rgb(113, 120, 126);border-width:2px;border-style:solid;/*color:rgb(255, 255, 255);*/</string>
+        <string notr="true">background-color: rgba(162, 202, 212, 150);border-radius:5px;border-color: rgb(134, 89, 52);border-width:3px;border-style:solid;color:rgb(0, 0, 0);</string>
        </property>
        <layout class="QHBoxLayout" name="horizontalLayout_41">
         <item>
@@ -2090,7 +2088,7 @@ p, li { white-space: pre-wrap; }
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">border-width:1px;</string>
+             <string notr="true">border-width:2px;</string>
             </property>
             <property name="text">
              <string>异常1</string>
@@ -2118,7 +2116,7 @@ p, li { white-space: pre-wrap; }
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">border-width:1px;</string>
+             <string notr="true">border-width:2px;</string>
             </property>
             <property name="text">
              <string>0.00%</string>
@@ -2133,7 +2131,7 @@ p, li { white-space: pre-wrap; }
      <item>
       <widget class="Line" name="line">
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(220, 220, 220);</string>
+        <string notr="true">background-color: rgb(105, 137, 187);</string>
        </property>
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
@@ -2143,7 +2141,7 @@ p, li { white-space: pre-wrap; }
      <item>
       <widget class="QWidget" name="widget_4" native="true">
        <property name="styleSheet">
-        <string notr="true">background-color: rgba(220, 220, 220, 150);border-radius:5px;border-color: rgb(113, 120, 126);border-width:2px;border-style:solid;/*color:rgb(255, 255, 255);*/</string>
+        <string notr="true">background-color: rgba(162, 202, 212, 150);border-radius:5px;border-color: rgb(134, 89, 52);border-width:3px;border-style:solid;color:rgb(0, 0, 0);</string>
        </property>
        <layout class="QHBoxLayout" name="horizontalLayout_42">
         <item>
@@ -2168,7 +2166,7 @@ p, li { white-space: pre-wrap; }
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">border-width:1px;</string>
+             <string notr="true">border-width:2px;</string>
             </property>
             <property name="text">
              <string>异常2</string>
@@ -2196,7 +2194,7 @@ p, li { white-space: pre-wrap; }
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">border-width:1px;</string>
+             <string notr="true">border-width:2px;</string>
             </property>
             <property name="text">
              <string>0.00%</string>
@@ -2211,7 +2209,7 @@ p, li { white-space: pre-wrap; }
      <item>
       <widget class="Line" name="line_4">
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(220, 220, 220);</string>
+        <string notr="true">background-color: rgb(105, 137, 187);</string>
        </property>
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
@@ -2221,7 +2219,7 @@ p, li { white-space: pre-wrap; }
      <item>
       <widget class="QWidget" name="widget_5" native="true">
        <property name="styleSheet">
-        <string notr="true">background-color: rgba(220, 220, 220, 150);border-radius:5px;border-color: rgb(113, 120, 126);border-width:2px;border-style:solid;/*color:rgb(255, 255, 255);*/</string>
+        <string notr="true">background-color: rgba(162, 202, 212, 150);border-radius:5px;border-color: rgb(134, 89, 52);border-width:3px;border-style:solid;color:rgb(0, 0, 0);</string>
        </property>
        <layout class="QHBoxLayout" name="horizontalLayout_43">
         <item>
@@ -2246,7 +2244,7 @@ p, li { white-space: pre-wrap; }
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">border-width:1px;</string>
+             <string notr="true">border-width:2px;</string>
             </property>
             <property name="text">
              <string>异常3</string>
@@ -2274,7 +2272,7 @@ p, li { white-space: pre-wrap; }
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">border-width:1px;</string>
+             <string notr="true">border-width:2px;</string>
             </property>
             <property name="text">
              <string>0.00%</string>
@@ -2322,7 +2320,7 @@ p, li { white-space: pre-wrap; }
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color: rgb(220, 220, 220);border-radius:5px;</string>
+          <string notr="true">background-color: rgb(65, 97, 136);border-radius:5px;</string>
          </property>
          <property name="inputMethodHints">
           <set>Qt::ImhDate</set>
