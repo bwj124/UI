@@ -119,40 +119,6 @@ class MySTDialog(ST_Dialog, QtWidgets.QDialog):
         self.setupUi(self)
 
 
-class MyPVDialog(PV_Dialog, QtWidgets.QDialog):
-    def __init__(self):
-        super(MyPVDialog, self).__init__(parent=None)
-        self.setupUi(self)
-        self.label.installEventFilter(self)
-        self.setWindowFlags(QtCore.Qt.WindowStaysOnTopHint)
-        self.isKeyPress = False
-
-    def eventFilter(self, object, event):
-        print('鼠标事件：', event.type())
-        # 释放鼠标左键和释放空格时关闭窗口
-        # QtCore.QEvent
-        if event.type() == 3:
-            self.setVisible(False)
-            return True
-        return False
-
-    def keyPressEvent(self, a0: QtGui.QKeyEvent) -> None:
-        self.isKeyPress = True
-
-    def keyReleaseEvent(self, a0: QtGui.QKeyEvent) -> None:
-        if self.isVisible() and self.isKeyPress:
-            if a0.key() == QtCore.Qt.Key_Space:
-                self.setVisible(False)
-        self.isKeyPress = False
-
-    def wheelEvent(self, a0: QtGui.QWheelEvent) -> None:
-        if self.isVisible():
-            if a0.angleDelta().y() > 0:
-                self.resize(QtCore.QSize(self.width()+10, self.height()+10))
-            else:
-                self.resize(QtCore.QSize(self.width() - 10, self.height() - 10))
-
-
 # 自定义可点击的Label类
 class MyQLabel(QtWidgets.QLabel):
     # 自定义信号, 注意信号必须为类属性
@@ -185,9 +151,9 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         super(MyWindow, self).__init__(parent=None)
         self.setupUi(self)
         self.statusBar().showMessage('正在初始化...', )
-        self.showMainWindow()
-        self.preview_dialog = MyPVDialog()
+        self.preview_dialog = PV_Dialog()
 
+        self.showMainWindow()
         self.action_10.triggered.connect(self.showMainWindow)
         self.action_17.triggered.connect(self.showHistory)
         self.action_18.triggered.connect(self.showTasks)
@@ -215,10 +181,6 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         # self.timer2 = QTimer()
         # self.time.time
 
-        self.listWidget.setIconSize(QtCore.QSize(200, 253))
-        self.listWidget.itemSelectionChanged.connect(self.show_bigPicture)
-        self.fault_pictures = []
-        self.currentImgIdx = 0
         # 创建异常图片的列表
         # self.list_widget = QtWidgets.QListWidget()
         # self.list_widget.setFlow(0)
@@ -242,13 +204,12 @@ class MyWindow(QMainWindow, Ui_MainWindow):
 
     # 显示异常图片大图
     def show_bigPicture(self):
-        self.currentImgIdx = self.listWidget.currentIndex().row()
-        self.listWidget.clearSelection()
-        if self.currentImgIdx in range(len(self.fault_pictures)):
-            currentImg = QPixmap(self.fault_pictures[self.currentImgIdx]).scaledToHeight(400)
-            self.preview_dialog.label.setPixmap(currentImg)
-            self.preview_dialog.label.setScaledContents(True)
-            self.preview_dialog.setVisible(True)
+        self.currentImgIdx = self.list_widget.currentIndex().column()
+        if self.currentImgIdx in range(len(self.image_paths)):
+            self.currentImg = QPixmap(self.image_paths[self.currentImgIdx]).scaledToHeight(400)
+            self.show_bigPicture_dialog.setPixmap(self.currentImg)
+            self.show_bigPicture_dialog.setVisible(True)
+        pass
 
     def dialog_create_task(self):
         self.ct_dialog = MyCTDialog()
@@ -364,49 +325,46 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.camera8_outpath = self.join_path((out_path, self.camera8_out))
 
     def show_fault(self, filename):
-        self.fault_pictures.append(filename+'.jpg')
-        item = QtWidgets.QListWidgetItem(QtGui.QIcon(filename+'.jpg'), '')
-        self.listWidget.addItem(item)
         self.count_fault += 1
-        # if self.count_fault < 4:
-        #     # index_fault_img = [self.label_15, self.label_16, self.label_17]
-        #     index_fault_tasks = [self.textBrowser, self.textBrowser_2, self.textBrowser_3]
-        #     index_fault_tasks_button = [self.pushButton_19, self.pushButton_21, self.pushButton_20]
-        #     index_fault_warn = [self.label_18, self.label_24, self.label_26]
-        #     index_fault_percent = [self.label_19, self.label_25, self.label_27]
-        #
-        #     # index_fault_img[self.count_fault-1].setPixmap(QPixmap(filename+'.jpg'))
-        #
-        #     with open(filename+'.txt', 'r', encoding='utf-8') as f:
-        #         info_list = f.read().split()
-        #     current_time = QDateTime.currentDateTime().toString("yyyy-MM-dd hh:mm:ss")
-        #     print(current_time)
-        #
-        #     index_fault_tasks[self.count_fault-1].setHtml("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-        #                                           "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-        #                                           "</style></head><body style=\" font-family:\'SimSun\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-        #                                           "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">铸件编号：{}</p>\n"
-        #                                           "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">异常编号：{}</p>\n"
-        #                                           "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">异常类别：{}</p>\n"
-        #                                           "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">检测时间：{}</p></body></html>".format(dict['name'], self.count_fault, info_list[0], current_time))
-        #     index_fault_tasks_button[self.count_fault-1].setText('待处理')
-        #     index_fault_warn[self.count_fault-1].setText(f'异常{self.count_fault}')
-        #     index_fault_percent[self.count_fault-1].setText(f'{int(float(info_list[1])*10000)/100.0}%')
-        # else:
-        #     # my_push_button = QtWidgets.QPushButton(self.scrollArea)
-        #     # my_push_button.setIcon(QtGui.QIcon(filename+'.jpg'))
-        #     # my_push_button.setMinimumSize(150, 143)
-        #     # my_push_button.setMaximumSize(150, 143)
-        #     # my_push_button.setIconSize(QtCore.QSize(150, 143))
-        #     # my_push_button.clicked.connect(self.showHistory)
-        #     # self.horizontalLayout_6.addWidget(my_push_button)
-        #     label_new = QLabel(self.scrollArea)
-        #     label_new.setObjectName("label_new")
-        #     label_new.setMinimumSize(150, 143)
-        #     # label_new.setMaximumSize(150, 143)
-        #     label_new.setScaledContents(True)
-        #     label_new.setPixmap(QPixmap(filename+'.jpg'))
-        #     self.horizontalLayout_6.addWidget(label_new)
+        if self.count_fault < 4:
+            index_fault_img = [self.label_15, self.label_16, self.label_17]
+            index_fault_tasks = [self.textBrowser, self.textBrowser_2, self.textBrowser_3]
+            index_fault_tasks_button = [self.pushButton_19, self.pushButton_21, self.pushButton_20]
+            index_fault_warn = [self.label_18, self.label_24, self.label_26]
+            index_fault_percent = [self.label_19, self.label_25, self.label_27]
+
+            index_fault_img[self.count_fault-1].setPixmap(QPixmap(filename+'.jpg'))
+
+            with open(filename+'.txt', 'r', encoding='utf-8') as f:
+                info_list = f.read().split()
+            current_time = QDateTime.currentDateTime().toString("yyyy-MM-dd hh:mm:ss")
+            print(current_time)
+
+            index_fault_tasks[self.count_fault-1].setHtml("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+                                                  "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+                                                  "</style></head><body style=\" font-family:\'SimSun\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+                                                  "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">铸件编号：{}</p>\n"
+                                                  "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">异常编号：{}</p>\n"
+                                                  "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">异常类别：{}</p>\n"
+                                                  "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">检测时间：{}</p></body></html>".format(dict['name'], self.count_fault, info_list[0], current_time))
+            index_fault_tasks_button[self.count_fault-1].setText('待处理')
+            index_fault_warn[self.count_fault-1].setText(f'异常{self.count_fault}')
+            index_fault_percent[self.count_fault-1].setText(f'{int(float(info_list[1])*10000)/100.0}%')
+        else:
+            # my_push_button = QtWidgets.QPushButton(self.scrollArea)
+            # my_push_button.setIcon(QtGui.QIcon(filename+'.jpg'))
+            # my_push_button.setMinimumSize(150, 143)
+            # my_push_button.setMaximumSize(150, 143)
+            # my_push_button.setIconSize(QtCore.QSize(150, 143))
+            # my_push_button.clicked.connect(self.showHistory)
+            # self.horizontalLayout_6.addWidget(my_push_button)
+            label_new = QLabel(self.scrollArea)
+            label_new.setObjectName("label_new")
+            label_new.setMinimumSize(150, 143)
+            # label_new.setMaximumSize(150, 143)
+            label_new.setScaledContents(True)
+            label_new.setPixmap(QPixmap(filename+'.jpg'))
+            self.horizontalLayout_6.addWidget(label_new)
 
         self.label_14.setText(f'已检测 产品{self.count_object}件 异常{self.count_fault}处')
         print('有缺陷', filename)

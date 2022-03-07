@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1222</width>
-    <height>889</height>
+    <width>1230</width>
+    <height>899</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -495,147 +495,13 @@ border-width: 1px;border-radius:5px;</string>
                  <number>20</number>
                 </property>
                 <item>
-                 <widget class="QScrollArea" name="scrollArea">
-                  <property name="minimumSize">
-                   <size>
-                    <width>0</width>
-                    <height>165</height>
-                   </size>
-                  </property>
+                 <widget class="QListWidget" name="listWidget">
                   <property name="styleSheet">
-                   <string notr="true">border-width: 0px;</string>
+                   <string notr="true">background-color: rgb(30, 37, 48);</string>
                   </property>
-                  <property name="verticalScrollBarPolicy">
-                   <enum>Qt::ScrollBarAlwaysOff</enum>
+                  <property name="flow">
+                   <enum>QListView::LeftToRight</enum>
                   </property>
-                  <property name="widgetResizable">
-                   <bool>true</bool>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignCenter</set>
-                  </property>
-                  <widget class="QWidget" name="scrollAreaWidgetContents">
-                   <property name="geometry">
-                    <rect>
-                     <x>0</x>
-                     <y>0</y>
-                     <width>862</width>
-                     <height>169</height>
-                    </rect>
-                   </property>
-                   <layout class="QHBoxLayout" name="horizontalLayout_16">
-                    <item>
-                     <layout class="QHBoxLayout" name="horizontalLayout_6">
-                      <item>
-                       <widget class="QLabel" name="label_15">
-                        <property name="minimumSize">
-                         <size>
-                          <width>150</width>
-                          <height>143</height>
-                         </size>
-                        </property>
-                        <property name="maximumSize">
-                         <size>
-                          <width>150</width>
-                          <height>143</height>
-                         </size>
-                        </property>
-                        <property name="font">
-                         <font>
-                          <family>黑体</family>
-                         </font>
-                        </property>
-                        <property name="styleSheet">
-                         <string notr="true">color: rgb(0,0,0);</string>
-                        </property>
-                        <property name="text">
-                         <string/>
-                        </property>
-                        <property name="scaledContents">
-                         <bool>true</bool>
-                        </property>
-                        <property name="alignment">
-                         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-                        </property>
-                       </widget>
-                      </item>
-                      <item>
-                       <widget class="QLabel" name="label_16">
-                        <property name="minimumSize">
-                         <size>
-                          <width>150</width>
-                          <height>143</height>
-                         </size>
-                        </property>
-                        <property name="maximumSize">
-                         <size>
-                          <width>150</width>
-                          <height>143</height>
-                         </size>
-                        </property>
-                        <property name="font">
-                         <font>
-                          <family>黑体</family>
-                         </font>
-                        </property>
-                        <property name="styleSheet">
-                         <string notr="true">color: rgb(0,0,0);</string>
-                        </property>
-                        <property name="text">
-                         <string/>
-                        </property>
-                        <property name="scaledContents">
-                         <bool>true</bool>
-                        </property>
-                       </widget>
-                      </item>
-                      <item>
-                       <widget class="QLabel" name="label_17">
-                        <property name="minimumSize">
-                         <size>
-                          <width>150</width>
-                          <height>143</height>
-                         </size>
-                        </property>
-                        <property name="maximumSize">
-                         <size>
-                          <width>150</width>
-                          <height>143</height>
-                         </size>
-                        </property>
-                        <property name="font">
-                         <font>
-                          <family>黑体</family>
-                         </font>
-                        </property>
-                        <property name="styleSheet">
-                         <string notr="true">color: rgb(0,0,0);</string>
-                        </property>
-                        <property name="text">
-                         <string/>
-                        </property>
-                        <property name="scaledContents">
-                         <bool>true</bool>
-                        </property>
-                       </widget>
-                      </item>
-                      <item>
-                       <spacer name="horizontalSpacer_6">
-                        <property name="orientation">
-                         <enum>Qt::Horizontal</enum>
-                        </property>
-                        <property name="sizeHint" stdset="0">
-                         <size>
-                          <width>40</width>
-                          <height>20</height>
-                         </size>
-                        </property>
-                       </spacer>
-                      </item>
-                     </layout>
-                    </item>
-                   </layout>
-                  </widget>
                  </widget>
                 </item>
                </layout>
@@ -1575,7 +1441,7 @@ border-width: 0px;border-radius:5px;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1222</width>
+     <width>1230</width>
      <height>21</height>
     </rect>
    </property>
