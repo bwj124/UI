@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1230</width>
+    <width>1264</width>
     <height>899</height>
    </rect>
   </property>
@@ -55,7 +55,7 @@ border-width: 2px;border-radius:5px;</string>
        <number>0</number>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="page">
        <property name="styleSheet">
@@ -1448,7 +1448,7 @@ border-width: 1px;border-radius:5px;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1230</width>
+     <width>1264</width>
      <height>21</height>
     </rect>
    </property>

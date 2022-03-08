@@ -13,7 +13,8 @@ from settings import Ui_Dialog as ST_Dialog
 from picture_preview import Ui_Dialog as PV_Dialog
 
 # global info
-dict = {"task": "",
+# dict_task存当前任务的参数
+dict_task = {"task": "",
         "batch": -1,
         "name": '',
         "batch_name": [],
@@ -32,6 +33,16 @@ camera6_path = input_path + 'camera6/'
 camera7_path = input_path + 'camera7/'
 camera8_path = input_path + 'camera8/'
 
+
+# 读取任务列表
+def load_json_from_file(filename) -> dict:
+    json_file = open(filename, 'r', encoding='utf-8')
+    json_str = json.load(json_file)
+    json_file.close()
+    return json_str
+
+
+# 存任务列表
 def save_task():
     tasks_file = open(tasks_path + 'all_tasks.json', 'r', encoding='utf-8')
     try:
@@ -41,15 +52,15 @@ def save_task():
         num = int(num)
         while f'task{num + 1}.json' in all_tasks.values():
             num += 1
-        all_tasks[dict["task"]] = f'task{num + 1}.json'
+        all_tasks[dict_task["task"]] = f'task{num + 1}.json'
     except:
         all_tasks = {}
         num = 0
-        all_tasks[dict["task"]] = f'task{num + 1}.json'
+        all_tasks[dict_task["task"]] = f'task{num + 1}.json'
     tasks_file = open(tasks_path + 'all_tasks.json', 'w', encoding='utf-8')
     json.dump(all_tasks, tasks_file, ensure_ascii=False)
     tasks_file.close()
-    json.dump(dict, open(tasks_path + f'task{num + 1}.json', 'w', encoding='utf-8'), ensure_ascii=False)
+    json.dump(dict_task, open(tasks_path + f'task{num + 1}.json', 'w', encoding='utf-8'), ensure_ascii=False)
 
 
 class MyCTDialog(CT_Dialog, QtWidgets.QDialog):
@@ -101,6 +112,37 @@ class MyATDialog(AT_Dialog, QtWidgets.QDialog):
         super(MyATDialog, self).__init__(parent=None)
         self.setupUi(self)
         self.setWindowIcon(QtGui.QIcon('software_img/bitbug.ico'))
+        # 原来有东西的话先删除
+        # while self.listWidget.count() > 0:
+        #     self.listWidget.takeItem(0)
+        self.tasks = load_json_from_file(tasks_path + 'all_tasks.json')
+        self.load_all_tasks()
+        self.pushButton.clicked.connect(self.creat_new_task)
+        self.pushButton_2.clicked.connect(self.delete_task)
+        self.pushButton_3.clicked.connect(self.use_task)
+        self.pushButton_4.clicked.connect(self.edit_task)
+
+    def load_all_tasks(self):
+        for task in self.tasks.keys():
+            item = QtWidgets.QListWidgetItem(task)
+            self.listWidget.addItem(item)
+
+    def creat_new_task(self):
+        self.ct_dialog = MyCTDialog()
+        self.ct_dialog.setVisible(True)
+
+    def delete_task(self):
+        pass
+
+    def edit_task(self):
+        pass
+
+    def use_task(self):
+        task_name = self.listWidget.currentItem().text()
+        task_filename = self.tasks[task_name]
+        global dict_task
+        dict_task = load_json_from_file(tasks_path + task_filename)
+        self.setVisible(False)
 
 
 class MyAMDialog(AM_Dialog, QtWidgets.QDialog):
@@ -159,33 +201,6 @@ class MyPVDialog(PV_Dialog, QtWidgets.QDialog):
                 self.resize(QtCore.QSize(self.width() - 10, self.height() - 10))
 
 
-# 自定义可点击的Label类
-class MyQLabel(QtWidgets.QLabel):
-    # 自定义信号, 注意信号必须为类属性
-    button_clicked_signal = QtCore.pyqtSignal()
-
-    # signal = QtCore.pyqtSignal()
-
-    def __init__(self, parent=None):
-        super(MyQLabel, self).__init__(parent)
-        # self.signal.connect(self.signalCall)
-
-    # def mousePressEvent(self, ev: QtGui.QMouseEvent):
-    #     self.signal.emit()
-
-    # def signalCall(self):
-    #
-    def mouseReleaseEvent(self, QMouseEvent):
-        self.button_clicked_signal.emit()
-
-    # def mousePressEvent(self, ev):
-    #     self.clicked.emit()
-
-    # 可在外部与槽函数连接
-    def connect_customized_slot(self, func):
-        self.button_clicked_signal.connect(func)
-
-
 class MyWindow(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super(MyWindow, self).__init__(parent=None)
@@ -220,30 +235,20 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.pushButton_15.clicked.connect(self.stop)
         self.statusbar.showMessage('初始化完成')
 
-        # self.label_15 = MyQLabel(self.scrollArea)
-        # self.label_15.connect_customized_slot(self.showHistory)
-        # self.label_15.signal
-
+        # 每隔2秒检测任务栏状态
         self.timer = QTimer(self)
         self.timer.timeout.connect(self.update_statusbar)
         self.timer.start(2000)
         self.count_fault = 0
         self.count_object = 1
-        # self.timer2 = QTimer()
-        # self.time.time
 
+        # 异常图像显示区设置
         self.listWidget.setIconSize(QtCore.QSize(200, 253))
         self.listWidget.itemSelectionChanged.connect(self.show_bigPicture)
+        # 异常图像路径列表
         self.fault_pictures = []
+        # 当前图像索引值
         self.currentImgIdx = 0
-        # 创建异常图片的列表
-        # self.list_widget = QtWidgets.QListWidget()
-        # self.list_widget.setFlow(0)
-        # self.list_widget(QTCore.QSize(150, 143))
-        # self.list_widget.itemSelectionChanged.connect(self.show_bigPicture)
-        # self.fault_pictures = []
-        # self.currentImgIdx = 0
-        # self.currentImg = None
 
     def showMainWindow(self):
         self.stackedWidget.setCurrentIndex(0)
@@ -596,6 +601,7 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.label_27.setStyleSheet("border-width:2px;")
         self.pushButton.setStyleSheet("background-color: rgb(65, 97, 136);border-radius:5px;")
 
+    # 开始
     def start(self):
         self.camera1 = self.join_path(self.all_photos(camera1_path))
         self.camera2 = self.join_path(self.all_photos(camera2_path))
@@ -608,11 +614,12 @@ class MyWindow(QMainWindow, Ui_MainWindow):
 
         self.max_i = len(self.camera8)
         self.i = 0
+        # 每隔一秒换一张图片
         self.timer_control = QTimer()
         self.timer_control.timeout.connect(self.setPhoto)
         self.timer_control.start(1000)
         self.find_fault()
-        self.new_fault = []
+        # self.new_fault = []
 
     def join_path(self, tur):
         root, files = tur
@@ -622,6 +629,7 @@ class MyWindow(QMainWindow, Ui_MainWindow):
             full_path.append(file)
         return full_path
 
+    # 在视频显示区显示图片（视频）
     def setPhoto(self):
         if self.i == self.max_i:
             self.timer_control.stop()
@@ -668,9 +676,11 @@ class MyWindow(QMainWindow, Ui_MainWindow):
             print('读取', path, '成功', root, files)
             return root, files
 
+    # 暂停
     def stop(self):
         self.timer_control.stop()
 
+    # 确定输入图像（视频）和输出图像路径
     def find_fault(self):
         _, self.camera1_out = self.all_photos(camera1_path)
         _, self.camera2_out = self.all_photos(camera2_path)
@@ -689,25 +699,23 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.camera7_outpath = self.join_path((out_path, self.camera7_out))
         self.camera8_outpath = self.join_path((out_path, self.camera8_out))
 
+    # 显示异常图像区
     def show_fault(self, filename):
         self.fault_pictures.append(filename+'.jpg')
         item = QtWidgets.QListWidgetItem(QtGui.QIcon(filename+'.jpg'), '')
         self.listWidget.addItem(item)
         self.count_fault += 1
         if self.count_fault < 4:
-            # index_fault_img = [self.label_15, self.label_16, self.label_17]
             index_fault_tasks = [self.textBrowser, self.textBrowser_2, self.textBrowser_3]
             index_fault_tasks_button = [self.pushButton_19, self.pushButton_21, self.pushButton_20]
             index_fault_warn = [self.label_18, self.label_24, self.label_26]
             index_fault_percent = [self.label_19, self.label_25, self.label_27]
-        #
-        #     # index_fault_img[self.count_fault-1].setPixmap(QPixmap(filename+'.jpg'))
-        #
+
             with open(filename+'.txt', 'r', encoding='utf-8') as f:
                 info_list = f.read().split()
             current_time = QDateTime.currentDateTime().toString("yyyy-MM-dd hh:mm:ss")
             print(current_time)
-        #
+
             index_fault_tasks[self.count_fault-1].setHtml("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
                                                   "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
                                                   "</style></head><body style=\" font-family:\'SimSun\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
@@ -718,36 +726,21 @@ class MyWindow(QMainWindow, Ui_MainWindow):
             index_fault_tasks_button[self.count_fault-1].setText('待处理')
             index_fault_warn[self.count_fault-1].setText(f'异常{self.count_fault}')
             index_fault_percent[self.count_fault-1].setText(f'{int(float(info_list[1])*10000)/100.0}%')
-        # else:
-        #     # my_push_button = QtWidgets.QPushButton(self.scrollArea)
-        #     # my_push_button.setIcon(QtGui.QIcon(filename+'.jpg'))
-        #     # my_push_button.setMinimumSize(150, 143)
-        #     # my_push_button.setMaximumSize(150, 143)
-        #     # my_push_button.setIconSize(QtCore.QSize(150, 143))
-        #     # my_push_button.clicked.connect(self.showHistory)
-        #     # self.horizontalLayout_6.addWidget(my_push_button)
-        #     label_new = QLabel(self.scrollArea)
-        #     label_new.setObjectName("label_new")
-        #     label_new.setMinimumSize(150, 143)
-        #     # label_new.setMaximumSize(150, 143)
-        #     label_new.setScaledContents(True)
-        #     label_new.setPixmap(QPixmap(filename+'.jpg'))
-        #     self.horizontalLayout_6.addWidget(label_new)
-
         self.label_14.setText(f'已检测 产品{self.count_object}件 异常{self.count_fault}处')
         print('有缺陷', filename)
 
+    # 状态改变时，更新状态栏
     def update_statusbar(self):
-        if dict['batch'] == -1:
+        if dict_task['batch'] == -1:
             self.statusbar.showMessage('请选择或创建一个任务以运行')
         else:
-            self.statusbar.showMessage('当前任务为：' + dict['task'])
+            self.statusbar.showMessage('当前任务为：' + dict_task['task'])
 
-    # 点击异常图片放大效果
-    def enlarge_img(self):
-        self.groupBox.setVisible(False)
-        # self.groupBox_2.setVisible(False)
+    # 模型更新
+    def update_model(self):
+        pass
 
+    # 关闭事件
     def closeEvent(self, a0: QtGui.QCloseEvent) -> None:
         self.ct_dialog.setVisible(False)
         self.at_dialog.setVisible(False)

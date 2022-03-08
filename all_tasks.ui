@@ -17,23 +17,7 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="QListWidget" name="listWidget">
-       <item>
-        <property name="text">
-         <string>任务1</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>任务2</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>任务3</string>
-        </property>
-       </item>
-      </widget>
+      <widget class="QListWidget" name="listWidget"/>
      </item>
      <item>
       <layout class="QVBoxLayout" name="verticalLayout">
