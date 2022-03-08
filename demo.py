@@ -233,14 +233,6 @@ class MyWindow(QMainWindow, Ui_MainWindow):
 
         self.pushButton_2.clicked.connect(self.start)
         self.pushButton_15.clicked.connect(self.stop)
-        self.statusbar.showMessage('初始化完成')
-
-        # 每隔2秒检测任务栏状态
-        self.timer = QTimer(self)
-        self.timer.timeout.connect(self.update_statusbar)
-        self.timer.start(2000)
-        self.count_fault = 0
-        self.count_object = 1
 
         # 异常图像显示区设置
         self.listWidget.setIconSize(QtCore.QSize(200, 253))
@@ -249,6 +241,43 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.fault_pictures = []
         # 当前图像索引值
         self.currentImgIdx = 0
+
+        # 更新模型页面的模型单选框
+        # 首先初始化，读取模型
+        # self.comboBox_2.addItem()
+        # 设置默认模型为当前任务模型或None
+        # self.comboBox_2.setCurrentIndex()
+        self.update_model_name = self.comboBox_2.currentText()
+
+        # 模型更新的图片路径
+        self.update_img_dir = ''
+        # 选取图片路径
+        self.pushButton_3.clicked.connect(self.open_update_img_dir)
+        # 模型更新的标签文件路径
+        self.update_label_file = ''
+        # 选取标签文件路径
+        self.pushButton_4.clicked.connect(self.open_update_label_file)
+        # 更新模型的保存路径
+        self.update_model_save_name = models_path + 'save.pt'
+        # 获取保存路径
+        self.pushButton_23.clicked.connect(self.save_new_model_path)
+
+        self.pushButton_5.clicked.connect(self.update_model_start)
+        self.pushButton_6.clicked.connect(self.update_model_pause)
+        self.pushButton_7.clicked.connect(self.switch_CPU_GPU)
+        self.pushButton_8.clicked.connect(self.save_update_model_result)
+
+
+
+
+        self.statusbar.showMessage('初始化完成')
+
+        # 每隔2秒检测任务栏状态
+        self.timer = QTimer(self)
+        self.timer.timeout.connect(self.update_statusbar)
+        self.timer.start(2000)
+        self.count_fault = 0
+        self.count_object = 1
 
     def showMainWindow(self):
         self.stackedWidget.setCurrentIndex(0)
@@ -736,8 +765,43 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         else:
             self.statusbar.showMessage('当前任务为：' + dict_task['task'])
 
+    # 模型更新图片目录,
+    def open_update_img_dir(self):
+        # 选择文件，最后一个参数，一个分号是都可以选，两个分号是分割开，各选各的，若有描述，则把后缀名放在()内
+        # fileName, fileType = QtWidgets.QFileDialog.getOpenFileName(self, "选取图片所在文件夹", os.getcwd(),
+        #                                                            "*.jpeg;*.jpg;*.png;;All Files(*)")
+        dir_path = QtWidgets.QFileDialog.getExistingDirectory(self, "选取图片所在文件夹", os.getcwd())
+        self.update_img_dir = dir_path
+        self.lineEdit.setText(dir_path)
+
+    # 模型更新的标签文件
+    def open_update_label_file(self):
+        fileName, fileType = QtWidgets.QFileDialog.getOpenFileName(self, "选取标签文件", os.getcwd(),
+                                                                   "Txt Files(*.txt);;All Files(*)")
+        self.update_label_file = fileName
+        self.lineEdit_2.setText(fileName)
+
+    # 更新模型的保存路径
+    def save_new_model_path(self):
+        filename, filetype = QtWidgets.QFileDialog.getSaveFileName(self, "选择模型保存位置", os.getcwd()+'/'+models_path,
+                                                         "pt files (*.pt);;all files(*.*)")
+        self.update_model_save_name = filename
+        self.lineEdit_5.setText(filename)
+
     # 模型更新
-    def update_model(self):
+    def update_model_start(self):
+        pass
+
+    # 暂停模型更新
+    def update_model_pause(self):
+        pass
+
+    # 切换CPU/GPU
+    def switch_CPU_GPU(self):
+        pass
+
+    # 保存训练结果
+    def save_update_model_result(self):
         pass
 
     # 关闭事件
@@ -750,9 +814,13 @@ class MyWindow(QMainWindow, Ui_MainWindow):
 
 
 def main():
-    app = QApplication(sys.argv)
-    myWin = MyWindow()
-    myWin.show()
+    try:
+        app = QApplication(sys.argv)
+        myWin = MyWindow()
+        myWin.show()
+    except:
+        print('app.aboutQt()', app.aboutQt())
+        print('app.aboutToQuit()', app.aboutToQuit())
     sys.exit(app.exec_())
 
 
