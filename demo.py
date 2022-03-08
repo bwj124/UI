@@ -14,15 +14,15 @@ from picture_preview import Ui_Dialog as PV_Dialog
 
 # global info
 # dict_task存当前任务的参数
-dict_task = {"task": "",
-        "batch": -1,
-        "name": '',
-        "batch_name": [],
-        "model": ""}
+dict_task = {"task": "",  # 任务名
+             "batch": -1,  # 是否为批处理
+             "name": '',  # 产品编号
+             "batch_name": [],   # 批处理时，文件名列表
+             "model": ""}  # 模型名称
 tasks_path = 'tasks/'
 data_path = 'data/'
 models_path = 'models/'
-input_path = data_path+'input/'
+input_path = data_path + 'input/'
 out_path = data_path + 'output/'
 camera1_path = input_path + 'camera1/'
 camera2_path = input_path + 'camera2/'
@@ -146,10 +146,25 @@ class MyATDialog(AT_Dialog, QtWidgets.QDialog):
 
 
 class MyAMDialog(AM_Dialog, QtWidgets.QDialog):
-    def __init__(self):
+    def __init__(self, my_parent):
         super(MyAMDialog, self).__init__(parent=None)
         self.setupUi(self)
+        self.my_parent = my_parent
         self.setWindowIcon(QtGui.QIcon('software_img/bitbug.ico'))
+        self.pushButton.clicked.connect(self.create_or_update_model)
+        self.pushButton_2.clicked.connect(self.delete_model)
+        self.pushButton_3.clicked.connect(self.select_model)
+
+    def create_or_update_model(self):
+        self.my_parent.showNewModel()
+        self.setVisible(False)
+
+    def delete_model(self):
+        pass
+
+    def select_model(self):
+        dict_task['model'] = self.listWidget.currentItem().text()
+        self.setVisible(False)
 
 
 class MyDMDialog(DM_Dialog, QtWidgets.QDialog):
@@ -196,7 +211,7 @@ class MyPVDialog(PV_Dialog, QtWidgets.QDialog):
     def wheelEvent(self, a0: QtGui.QWheelEvent) -> None:
         if self.isVisible():
             if a0.angleDelta().y() > 0:
-                self.resize(QtCore.QSize(self.width()+10, self.height()+10))
+                self.resize(QtCore.QSize(self.width() + 10, self.height() + 10))
             else:
                 self.resize(QtCore.QSize(self.width() - 10, self.height() - 10))
 
@@ -210,7 +225,7 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.showMainWindow()
         self.ct_dialog = MyCTDialog()
         self.at_dialog = MyATDialog()
-        self.am_dialog = MyAMDialog()
+        self.am_dialog = MyAMDialog(self)
         self.dm_dialog = MyDMDialog()
         self.st_dialog = MySTDialog()
         self.preview_dialog = MyPVDialog()
@@ -266,9 +281,6 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.pushButton_6.clicked.connect(self.update_model_pause)
         self.pushButton_7.clicked.connect(self.switch_CPU_GPU)
         self.pushButton_8.clicked.connect(self.save_update_model_result)
-
-
-
 
         self.statusbar.showMessage('初始化完成')
 
@@ -662,40 +674,40 @@ class MyWindow(QMainWindow, Ui_MainWindow):
     def setPhoto(self):
         if self.i == self.max_i:
             self.timer_control.stop()
-            self.statusbar.showMessage('任务：' + dict['task']+' 检测完成！')
+            self.statusbar.showMessage('任务：' + dict['task'] + ' 检测完成！')
             self.i = 0
             return
         print('设置图片', self.i)
         self.label_5.setPixmap(QPixmap(self.camera1[self.i]))
-        if os.path.getsize(self.camera1_outpath[self.i].split('.')[0]+'.txt') != 0:
+        if os.path.getsize(self.camera1_outpath[self.i].split('.')[0] + '.txt') != 0:
             self.show_fault(self.camera1_outpath[self.i].split('.')[0])
 
         self.label_6.setPixmap(QPixmap(self.camera2[self.i]))
-        if os.path.getsize(self.camera2_outpath[self.i].split('.')[0]+'.txt') != 0:
+        if os.path.getsize(self.camera2_outpath[self.i].split('.')[0] + '.txt') != 0:
             self.show_fault(self.camera2_outpath[self.i].split('.')[0])
 
         self.label_7.setPixmap(QPixmap(self.camera3[self.i]))
-        if os.path.getsize(self.camera3_outpath[self.i].split('.')[0]+'.txt') != 0:
+        if os.path.getsize(self.camera3_outpath[self.i].split('.')[0] + '.txt') != 0:
             self.show_fault(self.camera3_outpath[self.i].split('.')[0])
 
         self.label_8.setPixmap(QPixmap(self.camera4[self.i]))
-        if os.path.getsize(self.camera4_outpath[self.i].split('.')[0]+'.txt') != 0:
+        if os.path.getsize(self.camera4_outpath[self.i].split('.')[0] + '.txt') != 0:
             self.show_fault(self.camera4_outpath[self.i].split('.')[0])
 
         self.label_9.setPixmap(QPixmap(self.camera5[self.i]))
-        if os.path.getsize(self.camera5_outpath[self.i].split('.')[0]+'.txt') != 0:
+        if os.path.getsize(self.camera5_outpath[self.i].split('.')[0] + '.txt') != 0:
             self.show_fault(self.camera5_outpath[self.i].split('.')[0])
 
         self.label_10.setPixmap(QPixmap(self.camera6[self.i]))
-        if os.path.getsize(self.camera6_outpath[self.i].split('.')[0]+'.txt') != 0:
+        if os.path.getsize(self.camera6_outpath[self.i].split('.')[0] + '.txt') != 0:
             self.show_fault(self.camera6_outpath[self.i].split('.')[0])
 
         self.label_11.setPixmap(QPixmap(self.camera7[self.i]))
-        if os.path.getsize(self.camera7_outpath[self.i].split('.')[0]+'.txt') != 0:
+        if os.path.getsize(self.camera7_outpath[self.i].split('.')[0] + '.txt') != 0:
             self.show_fault(self.camera7_outpath[self.i].split('.')[0])
 
         self.label_12.setPixmap(QPixmap(self.camera8[self.i]))
-        if os.path.getsize(self.camera8_outpath[self.i].split('.')[0]+'.txt') != 0:
+        if os.path.getsize(self.camera8_outpath[self.i].split('.')[0] + '.txt') != 0:
             self.show_fault(self.camera8_outpath[self.i].split('.')[0])
 
         self.i += 1
@@ -730,8 +742,8 @@ class MyWindow(QMainWindow, Ui_MainWindow):
 
     # 显示异常图像区
     def show_fault(self, filename):
-        self.fault_pictures.append(filename+'.jpg')
-        item = QtWidgets.QListWidgetItem(QtGui.QIcon(filename+'.jpg'), '')
+        self.fault_pictures.append(filename + '.jpg')
+        item = QtWidgets.QListWidgetItem(QtGui.QIcon(filename + '.jpg'), '')
         self.listWidget.addItem(item)
         self.count_fault += 1
         if self.count_fault < 4:
@@ -740,21 +752,23 @@ class MyWindow(QMainWindow, Ui_MainWindow):
             index_fault_warn = [self.label_18, self.label_24, self.label_26]
             index_fault_percent = [self.label_19, self.label_25, self.label_27]
 
-            with open(filename+'.txt', 'r', encoding='utf-8') as f:
+            with open(filename + '.txt', 'r', encoding='utf-8') as f:
                 info_list = f.read().split()
             current_time = QDateTime.currentDateTime().toString("yyyy-MM-dd hh:mm:ss")
             print(current_time)
 
-            index_fault_tasks[self.count_fault-1].setHtml("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-                                                  "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-                                                  "</style></head><body style=\" font-family:\'SimSun\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-                                                  "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">铸件编号：{}</p>\n"
-                                                  "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">异常编号：{}</p>\n"
-                                                  "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">异常类别：{}</p>\n"
-                                                  "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">检测时间：{}</p></body></html>".format(dict['name'], self.count_fault, info_list[0], current_time))
-            index_fault_tasks_button[self.count_fault-1].setText('待处理')
-            index_fault_warn[self.count_fault-1].setText(f'异常{self.count_fault}')
-            index_fault_percent[self.count_fault-1].setText(f'{int(float(info_list[1])*10000)/100.0}%')
+            index_fault_tasks[self.count_fault - 1].setHtml(
+                "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+                "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+                "</style></head><body style=\" font-family:\'SimSun\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+                "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">铸件编号：{}</p>\n"
+                "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">异常编号：{}</p>\n"
+                "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">异常类别：{}</p>\n"
+                "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">检测时间：{}</p></body></html>".format(
+                    dict['name'], self.count_fault, info_list[0], current_time))
+            index_fault_tasks_button[self.count_fault - 1].setText('待处理')
+            index_fault_warn[self.count_fault - 1].setText(f'异常{self.count_fault}')
+            index_fault_percent[self.count_fault - 1].setText(f'{int(float(info_list[1]) * 10000) / 100.0}%')
         self.label_14.setText(f'已检测 产品{self.count_object}件 异常{self.count_fault}处')
         print('有缺陷', filename)
 
@@ -763,7 +777,7 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         if dict_task['batch'] == -1:
             self.statusbar.showMessage('请选择或创建一个任务以运行')
         else:
-            self.statusbar.showMessage('当前任务为：' + dict_task['task'])
+            self.statusbar.showMessage('当前任务：' + dict_task['task'] + '\t模型：'+dict_task['model'])
 
     # 模型更新图片目录,
     def open_update_img_dir(self):
@@ -783,8 +797,8 @@ class MyWindow(QMainWindow, Ui_MainWindow):
 
     # 更新模型的保存路径
     def save_new_model_path(self):
-        filename, filetype = QtWidgets.QFileDialog.getSaveFileName(self, "选择模型保存位置", os.getcwd()+'/'+models_path,
-                                                         "pt files (*.pt);;all files(*.*)")
+        filename, filetype = QtWidgets.QFileDialog.getSaveFileName(self, "选择模型保存位置", os.getcwd() + '/' + models_path,
+                                                                   "pt files (*.pt);;all files(*.*)")
         self.update_model_save_name = filename
         self.lineEdit_5.setText(filename)
 
@@ -826,4 +840,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
