@@ -56,6 +56,7 @@ class MyCTDialog(CT_Dialog, QtWidgets.QDialog):
     def __init__(self):
         super(MyCTDialog, self).__init__(parent=None)
         self.setupUi(self)
+        self.setWindowIcon(QtGui.QIcon('software_img/bitbug.ico'))
         self.pushButton.clicked.connect(self.upload_file)
         self.pushButton_2.clicked.connect(self.create_task)
         self.pushButton_3.clicked.connect(self.cancel)
@@ -99,24 +100,28 @@ class MyATDialog(AT_Dialog, QtWidgets.QDialog):
     def __init__(self):
         super(MyATDialog, self).__init__(parent=None)
         self.setupUi(self)
+        self.setWindowIcon(QtGui.QIcon('software_img/bitbug.ico'))
 
 
 class MyAMDialog(AM_Dialog, QtWidgets.QDialog):
     def __init__(self):
         super(MyAMDialog, self).__init__(parent=None)
         self.setupUi(self)
+        self.setWindowIcon(QtGui.QIcon('software_img/bitbug.ico'))
 
 
 class MyDMDialog(DM_Dialog, QtWidgets.QDialog):
     def __init__(self):
         super(MyDMDialog, self).__init__(parent=None)
         self.setupUi(self)
+        self.setWindowIcon(QtGui.QIcon('software_img/bitbug.ico'))
 
 
 class MySTDialog(ST_Dialog, QtWidgets.QDialog):
     def __init__(self):
         super(MySTDialog, self).__init__(parent=None)
         self.setupUi(self)
+        self.setWindowIcon(QtGui.QIcon('software_img/bitbug.ico'))
 
 
 class MyPVDialog(PV_Dialog, QtWidgets.QDialog):
@@ -124,6 +129,7 @@ class MyPVDialog(PV_Dialog, QtWidgets.QDialog):
         super(MyPVDialog, self).__init__(parent=None)
         self.setupUi(self)
         self.label.installEventFilter(self)
+        self.setWindowIcon(QtGui.QIcon('software_img/bitbug.ico'))
         self.setWindowFlags(QtCore.Qt.WindowStaysOnTopHint)
         self.isKeyPress = False
 
@@ -184,6 +190,7 @@ class MyWindow(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super(MyWindow, self).__init__(parent=None)
         self.setupUi(self)
+        self.setWindowIcon(QtGui.QIcon('software_img/bitbug.ico'))
         self.statusBar().showMessage('正在初始化...', )
         self.showMainWindow()
         self.ct_dialog = MyCTDialog()
