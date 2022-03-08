@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'last.ui'
+# Form implementation generated from reading ui file 'last_color_blue.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.6
 #
@@ -251,13 +251,12 @@ class Ui_MainWindow(object):
         self.horizontalLayout_36.addWidget(self.widget)
         self.stackedWidget.addWidget(self.page)
         self.page_2 = QtWidgets.QWidget()
-        self.page_2.setStyleSheet("background-color: rgb(30, 37, 48);\n"
-"border-width: 1px;border-radius:5px;")
+        self.page_2.setStyleSheet("border-color: rgb(129, 242, 255);\n"
+"border-width: 0px;border-radius:5px;")
         self.page_2.setObjectName("page_2")
         self.horizontalLayout_4 = QtWidgets.QHBoxLayout(self.page_2)
         self.horizontalLayout_4.setObjectName("horizontalLayout_4")
         self.widget_2 = QtWidgets.QWidget(self.page_2)
-        self.widget_2.setStyleSheet("background-color: rgb(30, 37, 48);")
         self.widget_2.setObjectName("widget_2")
         self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.widget_2)
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
@@ -392,7 +391,7 @@ class Ui_MainWindow(object):
         self.stackedWidget.addWidget(self.page_2)
         self.page_3 = QtWidgets.QWidget()
         self.page_3.setStyleSheet("border-color: rgb(129, 242, 255);\n"
-"border-width: 1px;border-radius:5px;")
+"border-width: 0px;border-radius:5px;")
         self.page_3.setObjectName("page_3")
         self.horizontalLayout_12 = QtWidgets.QHBoxLayout(self.page_3)
         self.horizontalLayout_12.setObjectName("horizontalLayout_12")
@@ -428,7 +427,6 @@ class Ui_MainWindow(object):
         self.horizontalLayout_15 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_15.setObjectName("horizontalLayout_15")
         self.lineEdit_4 = QtWidgets.QLineEdit(self.page_3)
-        self.lineEdit_4.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.lineEdit_4.setObjectName("lineEdit_4")
         self.horizontalLayout_15.addWidget(self.lineEdit_4)
         self.pushButton_22 = QtWidgets.QPushButton(self.page_3)
@@ -490,19 +488,11 @@ class Ui_MainWindow(object):
         self.pushButton_14.setObjectName("pushButton_14")
         self.horizontalLayout_30.addWidget(self.pushButton_14)
         self.verticalLayout_13.addLayout(self.horizontalLayout_30)
-        self.verticalLayout_13.setStretch(0, 5)
-        self.verticalLayout_13.setStretch(1, 2)
-        self.verticalLayout_13.setStretch(2, 5)
-        self.verticalLayout_13.setStretch(3, 5)
-        self.verticalLayout_13.setStretch(4, 5)
-        self.verticalLayout_13.setStretch(5, 5)
-        self.verticalLayout_13.setStretch(6, 5)
-        self.verticalLayout_13.setStretch(7, 5)
         self.horizontalLayout_12.addLayout(self.verticalLayout_13)
         self.stackedWidget.addWidget(self.page_3)
         self.page_4 = QtWidgets.QWidget()
         self.page_4.setStyleSheet("border-color: rgb(129, 242, 255);\n"
-"border-width: 1px;border-radius:5px;")
+"border-width: 0px;border-radius:5px;")
         self.page_4.setObjectName("page_4")
         self.horizontalLayout_35 = QtWidgets.QHBoxLayout(self.page_4)
         self.horizontalLayout_35.setObjectName("horizontalLayout_35")
@@ -664,8 +654,6 @@ class Ui_MainWindow(object):
         self.menu_4.setObjectName("menu_4")
         self.menu_3 = QtWidgets.QMenu(self.menubar)
         self.menu_3.setObjectName("menu_3")
-        self.menu_6 = QtWidgets.QMenu(self.menu_3)
-        self.menu_6.setObjectName("menu_6")
         self.menu_5 = QtWidgets.QMenu(self.menubar)
         self.menu_5.setObjectName("menu_5")
         MainWindow.setMenuBar(self.menubar)
@@ -958,14 +946,6 @@ class Ui_MainWindow(object):
         self.action_9.setObjectName("action_9")
         self.action_4 = QtWidgets.QAction(MainWindow)
         self.action_4.setObjectName("action_4")
-        self.action_20 = QtWidgets.QAction(MainWindow)
-        self.action_20.setObjectName("action_20")
-        self.action_21 = QtWidgets.QAction(MainWindow)
-        self.action_21.setObjectName("action_21")
-        self.action_22 = QtWidgets.QAction(MainWindow)
-        self.action_22.setObjectName("action_22")
-        self.action_23 = QtWidgets.QAction(MainWindow)
-        self.action_23.setObjectName("action_23")
         self.menu_7.addAction(self.action_csv)
         self.menu_7.addAction(self.action_7)
         self.menu_7.addAction(self.action_html)
@@ -984,13 +964,8 @@ class Ui_MainWindow(object):
         self.menu_2.addAction(self.menu_4.menuAction())
         self.menu_2.addSeparator()
         self.menu_2.addAction(self.menud.menuAction())
-        self.menu_6.addAction(self.action_20)
-        self.menu_6.addAction(self.action_21)
-        self.menu_6.addAction(self.action_22)
-        self.menu_6.addAction(self.action_23)
         self.menu_3.addAction(self.action_15)
         self.menu_3.addAction(self.action_16)
-        self.menu_3.addAction(self.menu_6.menuAction())
         self.menu_5.addAction(self.action_13)
         self.menu_5.addAction(self.action_4)
         self.menubar.addAction(self.menu.menuAction())
@@ -999,7 +974,7 @@ class Ui_MainWindow(object):
         self.menubar.addAction(self.menu_5.menuAction())
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(3)
+        self.stackedWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -1115,7 +1090,6 @@ class Ui_MainWindow(object):
         self.menud.setTitle(_translate("MainWindow", "小窗口"))
         self.menu_4.setTitle(_translate("MainWindow", "主面板"))
         self.menu_3.setTitle(_translate("MainWindow", "设置"))
-        self.menu_6.setTitle(_translate("MainWindow", "主题"))
         self.menu_5.setTitle(_translate("MainWindow", "模型"))
         self.dockWidget_3.setWindowTitle(_translate("MainWindow", "任务流水"))
         self.pushButton_18.setText(_translate("MainWindow", "搜索"))
@@ -1175,8 +1149,4 @@ class Ui_MainWindow(object):
         self.action_db.setText(_translate("MainWindow", "导出为数据库(db)"))
         self.action_9.setText(_translate("MainWindow", "搜索"))
         self.action_4.setText(_translate("MainWindow", "管理模型"))
-        self.action_20.setText(_translate("MainWindow", "蓝色主题"))
-        self.action_21.setText(_translate("MainWindow", "暗色主题"))
-        self.action_22.setText(_translate("MainWindow", "亮色主题"))
-        self.action_23.setText(_translate("MainWindow", "紫色主题"))
 import test_rc

@@ -496,6 +496,9 @@ border-width: 1px;border-radius:5px;</string>
                 </property>
                 <item>
                  <widget class="QListWidget" name="listWidget">
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgb(240, 240, 240);</string>
+                  </property>
                   <property name="flow">
                    <enum>QListView::LeftToRight</enum>
                   </property>
@@ -1507,12 +1510,22 @@ background-color: rgb(255, 255, 255);</string>
     <addaction name="separator"/>
     <addaction name="menud"/>
    </widget>
-   <widget class="QMenu" name="menu_3">
+      <widget class="QMenu" name="menu_3">
     <property name="title">
      <string>设置</string>
     </property>
+    <widget class="QMenu" name="menu_6">
+     <property name="title">
+      <string>主题</string>
+     </property>
+     <addaction name="action_20"/>
+     <addaction name="action_21"/>
+     <addaction name="action_22"/>
+     <addaction name="action_23"/>
+    </widget>
     <addaction name="action_15"/>
     <addaction name="action_16"/>
+    <addaction name="menu_6"/>
    </widget>
    <widget class="QMenu" name="menu_5">
     <property name="title">
@@ -1993,16 +2006,6 @@ p, li { white-space: pre-wrap; }
       </widget>
      </item>
      <item>
-      <widget class="Line" name="line">
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(220, 220, 220);</string>
-       </property>
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-      </widget>
-     </item>
-     <item>
       <widget class="QWidget" name="widget_4" native="true">
        <property name="styleSheet">
         <string notr="true">background-color: rgba(220, 220, 220, 150);border-radius:5px;border-color: rgb(113, 120, 126);border-width:2px;border-style:solid;/*color:rgb(255, 255, 255);*/</string>
@@ -2068,16 +2071,6 @@ p, li { white-space: pre-wrap; }
          </layout>
         </item>
        </layout>
-      </widget>
-     </item>
-     <item>
-      <widget class="Line" name="line_4">
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(220, 220, 220);</string>
-       </property>
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
       </widget>
      </item>
      <item>
@@ -2320,6 +2313,26 @@ p, li { white-space: pre-wrap; }
   <action name="action_4">
    <property name="text">
     <string>管理模型</string>
+   </property>
+  </action>
+  <action name="action_20">
+   <property name="text">
+    <string>蓝色主题</string>
+   </property>
+  </action>
+  <action name="action_21">
+   <property name="text">
+    <string>暗色主题</string>
+   </property>
+  </action>
+  <action name="action_22">
+   <property name="text">
+    <string>亮色主题</string>
+   </property>
+  </action>
+  <action name="action_23">
+   <property name="text">
+    <string>紫色主题</string>
    </property>
   </action>
  </widget>

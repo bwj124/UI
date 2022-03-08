@@ -503,44 +503,10 @@ border-width: 1px;border-radius:5px;</string>
                  <number>20</number>
                 </property>
                 <item>
-                 <widget class="QScrollArea" name="scrollArea">
-                  <property name="minimumSize">
-                   <size>
-                    <width>0</width>
-                    <height>165</height>
-                   </size>
-                  </property>
+                 <widget class="QListWidget" name="listWidget">
                   <property name="styleSheet">
-                   <string notr="true">border-width: 0px;</string>
+                   <string notr="true">background-color: rgb(157, 183, 220);</string>
                   </property>
-                  <property name="verticalScrollBarPolicy">
-                   <enum>Qt::ScrollBarAlwaysOff</enum>
-                  </property>
-                  <property name="widgetResizable">
-                   <bool>true</bool>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignCenter</set>
-                  </property>
-                  <widget class="QWidget" name="scrollAreaWidgetContents">
-                   <property name="geometry">
-                    <rect>
-                     <x>0</x>
-                     <y>0</y>
-                     <width>860</width>
-                     <height>169</height>
-                    </rect>
-                   </property>
-                   <layout class="QHBoxLayout" name="horizontalLayout_16">
-                    <item>
-                     <widget class="QListWidget" name="listWidget">
-                      <property name="flow">
-                       <enum>QListView::LeftToRight</enum>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
                  </widget>
                 </item>
                </layout>
@@ -1549,12 +1515,22 @@ background-color: rgb(255, 255, 255);</string>
     <addaction name="separator"/>
     <addaction name="menud"/>
    </widget>
-   <widget class="QMenu" name="menu_3">
+    <widget class="QMenu" name="menu_3">
     <property name="title">
      <string>设置</string>
     </property>
+    <widget class="QMenu" name="menu_6">
+     <property name="title">
+      <string>主题</string>
+     </property>
+     <addaction name="action_20"/>
+     <addaction name="action_21"/>
+     <addaction name="action_22"/>
+     <addaction name="action_23"/>
+    </widget>
     <addaction name="action_15"/>
     <addaction name="action_16"/>
+    <addaction name="menu_6"/>
    </widget>
    <widget class="QMenu" name="menu_5">
     <property name="title">
@@ -2033,16 +2009,6 @@ border-color: rgb(123, 180, 232);</string>
       </widget>
      </item>
      <item>
-      <widget class="Line" name="line">
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(105, 137, 187);</string>
-       </property>
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-      </widget>
-     </item>
-     <item>
       <widget class="QWidget" name="widget_4" native="true">
        <property name="styleSheet">
         <string notr="true">background-color: rgba(162, 202, 212, 150);border-radius:5px;border-color:rgb(109, 169, 223);border-width:3px;border-style:solid;color:rgb(0, 0, 0);</string>
@@ -2108,16 +2074,6 @@ border-color: rgb(123, 180, 232);</string>
          </layout>
         </item>
        </layout>
-      </widget>
-     </item>
-     <item>
-      <widget class="Line" name="line_4">
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(105, 137, 187);</string>
-       </property>
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
       </widget>
      </item>
      <item>
@@ -2360,6 +2316,26 @@ border-color: rgb(123, 180, 232);</string>
   <action name="action_4">
    <property name="text">
     <string>管理模型</string>
+   </property>
+  </action>
+  <action name="action_20">
+   <property name="text">
+    <string>蓝色主题</string>
+   </property>
+  </action>
+  <action name="action_21">
+   <property name="text">
+    <string>暗色主题</string>
+   </property>
+  </action>
+  <action name="action_22">
+   <property name="text">
+    <string>亮色主题</string>
+   </property>
+  </action>
+  <action name="action_23">
+   <property name="text">
+    <string>紫色主题</string>
    </property>
   </action>
  </widget>

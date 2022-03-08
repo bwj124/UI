@@ -186,6 +186,11 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.setupUi(self)
         self.statusBar().showMessage('正在初始化...', )
         self.showMainWindow()
+        self.ct_dialog = MyCTDialog()
+        self.at_dialog = MyATDialog()
+        self.am_dialog = MyAMDialog()
+        self.dm_dialog = MyDMDialog()
+        self.st_dialog = MySTDialog()
         self.preview_dialog = MyPVDialog()
 
         self.action_10.triggered.connect(self.showMainWindow)
@@ -198,6 +203,11 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.action_4.triggered.connect(self.dialog_all_models)
         self.action_15.triggered.connect(self.dialog_dev_mana)
         self.action_16.triggered.connect(self.dialog_settings)
+
+        self.action_20.triggered.connect(self.blue_theme)
+        self.action_21.triggered.connect(self.black_theme)
+        self.action_22.triggered.connect(self.white_theme)
+        self.action_23.triggered.connect(self.purple_theme)
 
         self.pushButton_2.clicked.connect(self.start)
         self.pushButton_15.clicked.connect(self.stop)
@@ -251,24 +261,333 @@ class MyWindow(QMainWindow, Ui_MainWindow):
             self.preview_dialog.setVisible(True)
 
     def dialog_create_task(self):
-        self.ct_dialog = MyCTDialog()
         self.ct_dialog.setVisible(True)
 
     def dialog_all_tasks(self):
-        self.at_dialog = MyATDialog()
         self.at_dialog.setVisible(True)
 
     def dialog_all_models(self):
-        self.am_dialog = MyAMDialog()
         self.am_dialog.setVisible(True)
 
     def dialog_dev_mana(self):
-        self.dm_dialog = MyDMDialog()
         self.dm_dialog.setVisible(True)
 
     def dialog_settings(self):
-        self.st_dialog = MySTDialog()
         self.st_dialog.setVisible(True)
+
+    def blue_theme(self):
+        self.setStyleSheet("background-color:rgb(26, 29, 37)")
+        self.stackedWidget.setStyleSheet("background-color: rgb(30, 37, 48);\n"
+                                         "color: rgb(255,255,255);\n"
+                                         "border-color: rgb(125, 253, 255);\n"
+                                         "border-style: solid;\n"
+                                         "border-width: 2px;border-radius:5px;")
+        self.page.setStyleSheet("background-color: rgb(30, 37, 48);\n")
+        self.widget.setStyleSheet("background-color: rgb(30, 37, 48);border-width:0px")
+        self.label_2.setStyleSheet("background-color: rgb(49, 58, 75);broder-width : 0px;border-radius:5px;")
+        self.label.setStyleSheet("broder-width: 0px;")
+        self.pushButton_2.setStyleSheet("background-color: rgb(65, 97, 136);\n"
+                                        "border-radius:5px;")
+        self.pushButton_15.setStyleSheet("background-color: rgb(65, 97, 136);border-radius:5px;")
+        self.groupBox_2.setStyleSheet("background-color: rgb(49, 58, 75);\n"
+                                      "border-color: rgb(125, 253, 255);\n"
+                                      "border-style: solid;\n"
+                                      "border-width: 1px;border-radius:5px;")
+        self.label_6.setStyleSheet("border-color: rgb(125, 253, 255);")
+        self.label_10.setStyleSheet("border-color: rgb(125, 253, 255);")
+        self.label_12.setStyleSheet("border-color: rgb(125, 253, 255);")
+        self.label_5.setStyleSheet("background-color: rgb(49, 58, 75);")
+        self.label_9.setStyleSheet("border-color: rgb(125, 253, 255);")
+        self.label_11.setStyleSheet("border-color: rgb(125, 253, 255);")
+        self.label_8.setStyleSheet("border-color: rgb(125, 253, 255);")
+        self.label_7.setStyleSheet("border-color: rgb(125, 253, 255);")
+        self.groupBox.setStyleSheet("background-color: rgb(49, 58, 75);\n"
+                                    "border-color: rgb(125, 253, 255);\n"
+                                    "border-style: solid;\n"
+                                    "border-width: 1px;border-radius:5px;")
+        self.listWidget.setStyleSheet("background-color: rgb(30, 37, 48);")
+        self.page_2.setStyleSheet("border-color: rgb(129, 242, 255);border-width: 0px;border-radius:5px;")
+        self.page_3.setStyleSheet("border-color: rgb(129, 242, 255);\n"
+                                  "border-width: 0px;border-radius:5px;")
+        self.page_4.setStyleSheet("border-color: rgb(129, 242, 255);\n"
+                                  "border-width: 0px;border-radius:5px;")
+        self.statusbar.setStyleSheet("background-color: rgb(220, 220, 220)")
+        self.dockWidget_3.setStyleSheet("background-color:rgb(26, 29, 37);\n"
+                                        "color: rgb(255, 255, 255);")
+        self.dockWidgetContents_3.setStyleSheet("background-color: rgb(30, 37, 48);")
+        self.lineEdit_3.setStyleSheet("background-color: rgb(255, 255, 255);border-radius:3px;")
+        self.pushButton_18.setStyleSheet("background-color: rgb(155, 183, 220);border-radius:5px;")
+        self.textBrowser.setStyleSheet("background-color: rgba(68, 70, 74, 150);color: rgb(255,255,"
+                                       "255);border-radius:5px;border-style:solid;border-width:2px;border-color: rgb("
+                                       "125, 253, 255);")
+        self.pushButton_19.setStyleSheet("background-color: rgb(65, 97, 136);border-radius:5px;")
+        self.textBrowser_2.setStyleSheet(
+            "background-color: rgba(68, 70, 74, 150);color: rgb(255,255,"
+            "255);border-radius:5px;border-style:solid;border-width:2px;border-color: rgb(125, 253, 255);")
+        self.pushButton_21.setStyleSheet("background-color: rgb(65, 97, 136);border-radius:5px;")
+        self.textBrowser_3.setStyleSheet("background-color: rgba(68, 70, 74, 150);color: rgb(255,255,"
+                                         "255);border-radius:5px;border-style:solid;border-width:2px;border-color: "
+                                         "rgb(125, 253, 255);")
+        self.pushButton_20.setStyleSheet("background-color: rgb(65, 97, 136);border-radius:5px;")
+        self.dockWidget_4.setStyleSheet("background-color:rgb(26, 29, 37);\n"
+                                        "color:rgb(255,255,255);")
+        self.dockWidgetContents_4.setStyleSheet("background-color: rgb(30, 37, 48);")
+        self.widget_3.setStyleSheet(
+            "background-color: rgba(68, 70, 74, 150);border-radius:5px;border-color: rgb(125, 253, "
+            "255);border-width:2px;border-style:solid;color:rgb(255, 255, 255);")
+        self.label_18.setStyleSheet("border-width:1px;")
+        self.label_19.setStyleSheet("border-width:1px;")
+        # self.line.setStyleSheet("background-color: rgb(105, 137, 187);")
+        self.widget_4.setStyleSheet(
+            "background-color: rgba(68, 70, 74, 150);border-radius:5px;border-color: rgb(125, 253, "
+            "255);border-width:2px;border-style:solid;color:rgb(255, 255, 255);")
+        self.label_24.setStyleSheet("border-width:1px;")
+        self.label_25.setStyleSheet("border-width:1px;")
+        # self.line_4.setStyleSheet("background-color: rgb(105, 137, 187);")
+        self.widget_5.setStyleSheet(
+            "background-color: rgba(68, 70, 74, 150);border-radius:5px;border-color: rgb(125, 253, "
+            "255);border-width:2px;border-style:solid;color:rgb(255, 255, 255);")
+        self.label_26.setStyleSheet("border-width:1px;")
+        self.label_27.setStyleSheet("border-width:1px;")
+        self.pushButton.setStyleSheet("background-color: rgb(65, 97, 136);border-radius:5px;")
+
+    def black_theme(self):
+        self.setStyleSheet("background-color:rgb(36, 36, 36)")
+        self.stackedWidget.setStyleSheet("background-color: rgb(68, 70, 74);\n"
+                                         "color: rgb(255,255,255);\n"
+                                         "border-color: rgb(134, 89, 52);\n"
+                                         "border-style: solid;\n"
+                                         "border-width: 3px;border-radius:5px;")
+        self.page.setStyleSheet("border-color: rgb(129, 242, 255);\n"
+                                "border-width: 0px;border-radius:5px;")
+        self.widget.setStyleSheet("background-color:rgb(59, 61, 65);")
+        self.label_2.setStyleSheet("background-color: rgb(68, 70, 74);\n"
+                                   "broder-width : 0px;border-radius:5px;")
+        self.label.setStyleSheet("broder-width: 0px;")
+        self.pushButton_2.setStyleSheet("background-color: rgb(68, 70, 74);\n"
+                                        "border-radius:5px;")
+        self.pushButton_15.setStyleSheet("background-color: rgb(68, 70, 74);border-radius:5px;")
+        self.groupBox_2.setStyleSheet("background-color: rgb(59, 61, 65);\n"
+                                      "border-color: rgb(134, 89, 52);\n"
+                                      "border-style: solid;\n"
+                                      "border-width: 1px;border-radius:5px;")
+        self.label_6.setStyleSheet("background-color: rgb(68, 70, 74);")
+        self.label_10.setStyleSheet("background-color: rgb(68, 70, 74);")
+        self.label_12.setStyleSheet("background-color: rgb(68, 70, 74);")
+        self.label_5.setStyleSheet("background-color: rgb(68, 70, 74);")
+        self.label_9.setStyleSheet("background-color: rgb(68, 70, 74);")
+        self.label_11.setStyleSheet("background-color: rgb(68, 70, 74);")
+        self.label_8.setStyleSheet("background-color: rgb(68, 70, 74);")
+        self.label_7.setStyleSheet("background-color: rgb(68, 70, 74);")
+        self.groupBox.setStyleSheet("background-color: rgb(68, 70, 74);\n"
+                                    "border-color: rgb(134, 89, 52);\n"
+                                    "border-style: solid;\n"
+                                    "border-width: 1px;border-radius:5px;")
+        self.listWidget.setStyleSheet("background-color:rgb(59, 61, 65);")
+        self.page_2.setStyleSheet("border-color: rgb(129, 242, 255);\n"
+                                  "border-width: 0px;border-radius:5px;")
+        self.page_3.setStyleSheet("border-color: rgb(129, 242, 255);\n"
+                                  "border-width: 0px;border-radius:5px;")
+        self.page_4.setStyleSheet("border-color: rgb(129, 242, 255);\n"
+                                  "border-width: 0px;border-radius:5px;")
+        self.menubar.setStyleSheet("color: rgb(0, 0, 0);\n"
+                                   "background-color: rgb(255, 255, 255);")
+        self.menu.setStyleSheet("")
+        self.statusbar.setStyleSheet("background-color: rgb(220, 220, 220)")
+        self.dockWidget_3.setStyleSheet("background-color: rgb(36, 36, 36);\n"
+                                        "color: rgb(255, 255, 255);\n"
+                                        "")
+        self.dockWidgetContents_3.setStyleSheet("background-color: rgb(59, 61, 65)")
+        self.lineEdit_3.setStyleSheet("background-color: rgb(255, 255, 255);border-radius:3px;")
+        self.pushButton_18.setStyleSheet("background-color: rgb(155, 183, 220);border-radius:5px;")
+        self.textBrowser.setStyleSheet(
+            "background-color: rgba(68, 70, 74, 150);color: rgb(255,255,255);border-radius:5px;border-style:solid;border-width:2px;border-color: rgb(134, 89, 52)\n"
+            "")
+        self.pushButton_19.setStyleSheet("background-color: rgb(65, 97, 136);border-radius:5px;")
+        self.textBrowser_2.setStyleSheet(
+            "background-color: rgba(68, 70, 74, 150);color: rgb(255,255,255);border-radius:5px;border-style:solid;border-width:2px;border-color: rgb(134, 89, 52)\n"
+            "")
+        self.pushButton_21.setStyleSheet("background-color: rgb(65, 97, 136);border-radius:5px;")
+        self.textBrowser_3.setStyleSheet(
+            "background-color: rgba(68, 70, 74, 150);color: rgb(255,255,255);border-radius:5px;border-style:solid;border-width:2px;border-color: rgb(134, 89, 52)\n"
+            "")
+        self.pushButton_20.setStyleSheet("background-color: rgb(65, 97, 136);border-radius:5px;")
+        self.dockWidget_4.setStyleSheet("background-color: rgb(36, 36, 36);color: rgb(255,255,255);")
+        self.dockWidgetContents_4.setStyleSheet("background-color: rgb(59, 61, 65);")
+        self.widget_3.setStyleSheet(
+            "background-color: rgba(68, 70, 74, 150);border-radius:5px;border-color: rgb(134, 89, 52);border-width:3px;border-style:solid;color:rgb(255, 255, 255);")
+        self.label_18.setStyleSheet("border-width:2px;")
+        self.label_19.setStyleSheet("border-width:2px;")
+        self.widget_4.setStyleSheet(
+            "background-color: rgba(68, 70, 74, 150);border-radius:5px;border-color: rgb(134, 89, 52);border-width:3px;border-style:solid;color:rgb(255, 255, 255);")
+        self.label_24.setStyleSheet("border-width:2px;")
+        self.label_25.setStyleSheet("border-width:2px;")
+        self.widget_5.setStyleSheet(
+            "background-color: rgba(68, 70, 74, 150);border-radius:5px;border-color: rgb(134, 89, 52);border-width:3px;border-style:solid;color:rgb(255, 255, 255);")
+        self.label_26.setStyleSheet("border-width:2px;")
+        self.label_27.setStyleSheet("border-width:2px;")
+        self.pushButton.setStyleSheet("background-color: rgb(65, 97, 136);border-radius:5px;")
+
+    def white_theme(self):
+        self.setStyleSheet("background-color:rgb(240, 240, 240)")
+        self.stackedWidget.setStyleSheet("background-color: rgb(240, 240, 240);\n"
+                                         "/*color: rgb(255,255,255);*/\n"
+                                         "border-color: rgb(113, 120, 126);\n"
+                                         "border-style: solid;\n"
+                                         "border-width: 2px;border-radius:5px;")
+        self.page.setStyleSheet("background-color: rgb(240, 240, 240);\n"
+                                "border-width: 0px;border-radius:5px;")
+        self.widget.setStyleSheet("background-color: rgb(240, 240, 240);")
+        self.label_2.setStyleSheet("background-color: rgb(230, 230, 230);\n"
+                                   "broder-width : 0px;border-radius:5px;")
+        self.label.setStyleSheet("broder-width: 0px;")
+        self.pushButton_2.setStyleSheet("background-color: rgb(220, 220, 220);\n"
+                                        "border-radius:5px;")
+        self.pushButton_15.setStyleSheet("background-color: rgb(220, 220, 220);border-radius:5px;")
+        self.groupBox_2.setStyleSheet("background-color: rgb(240, 240, 240);\n"
+                                      "border-color: rgb(113, 120, 126);;\n"
+                                      "border-style: solid;\n"
+                                      "border-width: 1px;border-radius:5px;")
+        self.label_6.setStyleSheet("border-color: rgb(113, 120, 126);")
+        self.label_10.setStyleSheet("border-color: rgb(113, 120, 126);")
+        self.label_12.setStyleSheet("border-color: rgb(113, 120, 126);")
+        self.label_5.setStyleSheet("border-color: rgb(113, 120, 126);")
+        self.label_9.setStyleSheet("border-color: rgb(113, 120, 126);")
+        self.label_11.setStyleSheet("border-color: rgb(113, 120, 126);")
+        self.label_8.setStyleSheet("border-color: rgb(113, 120, 126);")
+        self.label_7.setStyleSheet("border-color: rgb(113, 120, 126);")
+        self.groupBox.setStyleSheet("background-color: rgb(240, 240, 240);\n"
+                                    "border-color: rgb(113, 120, 126);\n"
+                                    "border-style: solid;\n"
+                                    "border-width: 1px;border-radius:5px;")
+        self.listWidget.setStyleSheet("background-color: rgb(240, 240, 240);")
+        self.page_2.setStyleSheet("border-color: rgb(129, 242, 255);\n"
+                                  "border-width: 0px;border-radius:5px;")
+        self.page_3.setStyleSheet("border-color: rgb(129, 242, 255);\n"
+                                  "border-width: 0px;border-radius:5px;")
+        self.page_4.setStyleSheet("border-color: rgb(129, 242, 255);\n"
+                                  "border-width: 0px;border-radius:5px;")
+        self.menubar.setStyleSheet("color: rgb(0, 0, 0);\n"
+                                   "background-color: rgb(255, 255, 255);")
+        self.menu.setStyleSheet("")
+        self.statusbar.setStyleSheet("background-color: rgb(220, 220, 220)")
+        self.dockWidget_3.setStyleSheet("background-color:rgba(240, 240, 240,0);\n"
+                                        "/*color: rgb(255, 255, 255);*/\n"
+                                        "")
+        self.dockWidgetContents_3.setStyleSheet("background-color: rgb(240, 240, 240);")
+        self.lineEdit_3.setStyleSheet("background-color: rgb(255, 255, 255);border-radius:3px;")
+        self.pushButton_18.setStyleSheet("background-color: rgb(230, 230, 230);border-radius:5px;")
+        self.textBrowser.setStyleSheet(
+            "background-color: rgba(220, 220, 220, 150);/*color: rgb(255,255,255);*/border-radius:5px;border-style:solid;border-width:2px;border-color: rgb(113, 120, 126);\n"
+            "")
+        self.pushButton_19.setStyleSheet("background-color: rgb(220, 220, 220);border-radius:5px;")
+        self.textBrowser_2.setStyleSheet(
+            "background-color: rgba(220, 220, 220, 150);/*color: rgb(255,255,255);*/border-radius:5px;border-style:solid;border-width:2px;border-color: rgb(113, 120, 126);\n"
+            "")
+        self.pushButton_21.setStyleSheet("background-color: rgb(220, 220, 220);border-radius:5px;")
+        self.textBrowser_3.setStyleSheet(
+            "background-color: rgba(220, 220, 220, 150);/*color: rgb(255,255,255);*/border-radius:5px;border-style:solid;border-width:2px;border-color: rgb(113, 120, 126);\n"
+            "")
+        self.pushButton_20.setStyleSheet("background-color: rgb(220, 220, 220);border-radius:5px;")
+        self.dockWidget_4.setStyleSheet("background-color:rgba(240, 240, 240, 0);\n"
+                                        "/*color:rgb(255,255,255);*/")
+        self.dockWidgetContents_4.setStyleSheet("background-color: rgb(240, 240, 240);")
+        self.widget_3.setStyleSheet(
+            "background-color: rgba(220, 220, 220, 150);border-radius:5px;border-color: rgb(113, 120, 126);border-width:2px;border-style:solid;/*color:rgb(255, 255, 255);*/")
+        self.label_18.setStyleSheet("border-width:1px;")
+        self.label_19.setStyleSheet("border-width:1px;")
+        self.widget_4.setStyleSheet(
+            "background-color: rgba(220, 220, 220, 150);border-radius:5px;border-color: rgb(113, 120, 126);border-width:2px;border-style:solid;/*color:rgb(255, 255, 255);*/")
+        self.label_24.setStyleSheet("border-width:1px;")
+        self.label_25.setStyleSheet("border-width:1px;")
+        self.widget_5.setStyleSheet(
+            "background-color: rgba(220, 220, 220, 150);border-radius:5px;border-color: rgb(113, 120, 126);border-width:2px;border-style:solid;/*color:rgb(255, 255, 255);*/")
+        self.label_26.setStyleSheet("border-width:1px;")
+        self.label_27.setStyleSheet("border-width:1px;")
+        self.pushButton.setStyleSheet("background-color: rgb(220, 220, 220);border-radius:5px;")
+
+    def purple_theme(self):
+        self.setStyleSheet("background-color:rgb(105, 105, 157)")
+        self.stackedWidget.setStyleSheet("background-color: rgb(103, 139, 183);\n"
+                                         "color: rgb(255,255,255);\n"
+                                         "border-color: rgb(129, 242, 255);\n"
+                                         "border-style: solid;\n"
+                                         "border-width: 3px;border-radius:5px;")
+        self.page.setStyleSheet("border-color: rgb(129, 242, 255);\n"
+                                "border-width: 0px;border-radius:5px;")
+        self.widget.setStyleSheet("background-color:rgb(94, 125, 165);")
+        self.label_2.setStyleSheet("background-color: rgb(103, 140, 184);\n"
+                                   "broder-width : 0px;border-radius:5px;")
+        self.label.setStyleSheet("broder-width: 0px;")
+        self.pushButton_2.setStyleSheet("background-color: rgb(163, 201, 214);\n"
+                                        "border-radius:5px;")
+        self.pushButton_15.setStyleSheet("background-color: rgb(163, 201, 214);border-radius:5px;")
+        self.groupBox_2.setStyleSheet("background-color: rgb(103, 140, 184);\n"
+                                      "border-color: rgb(129, 242, 255);\n"
+                                      "border-style: solid;\n"
+                                      "border-width: 1px;border-radius:5px;")
+        self.label_6.setStyleSheet("background-color: rgb(157, 183, 220);color: rgb(0,0,0);border-width: 2px;\n"
+                                   "border-color: rgb(134, 150, 199);")
+        self.label_10.setStyleSheet("background-color: rgb(157, 183, 220);color: rgb(0,0,0);border-width: 2px;\n"
+                                    "border-color: rgb(134, 150, 199);")
+        self.label_12.setStyleSheet("background-color: rgb(157, 183, 220);color: rgb(0,0,0);border-width: 2px;\n"
+                                    "border-color: rgb(134, 150, 199);")
+        self.label_5.setStyleSheet("background-color: rgb(157, 183, 220);color: rgb(0,0,0);border-width: 2px;\n"
+                                   "border-color: rgb(134, 150, 199);")
+        self.label_9.setStyleSheet("background-color: rgb(157, 183, 220);color: rgb(0,0,0);border-width: 2px;\n"
+                                   "border-color: rgb(134, 150, 199);")
+        self.label_11.setStyleSheet("background-color: rgb(157, 183, 220);color: rgb(0,0,0);border-width: 2px;\n"
+                                    "border-color: rgb(134, 150, 199);")
+        self.label_8.setStyleSheet("background-color: rgb(157, 183, 220);color: rgb(0,0,0);border-width: 2px;\n"
+                                   "border-color: rgb(134, 150, 199);")
+        self.label_7.setStyleSheet("background-color: rgb(157, 183, 220);color: rgb(0,0,0);border-width: 2px;\n"
+                                   "border-color: rgb(134, 150, 199);")
+        self.groupBox.setStyleSheet("background-color: rgb(157, 183, 220);\n"
+                                    "border-color: rgb(129, 242, 255);\n"
+                                    "border-style: solid;\n"
+                                    "border-width: 1px;border-radius:5px;")
+        self.listWidget.setStyleSheet("background-color: rgb(157, 183, 220);")
+        self.page_2.setStyleSheet("border-color: rgb(129, 242, 255);\n"
+                                  "border-width: 0px;border-radius:5px;")
+        self.page_3.setStyleSheet("border-color: rgb(129, 242, 255);\n"
+                                  "border-width: 0px;border-radius:5px;")
+        self.page_4.setStyleSheet("border-color: rgb(129, 242, 255);\n"
+                                  "border-width: 0px;border-radius:5px;")
+        self.menubar.setStyleSheet("color: rgb(0, 0, 0);\n"
+                                   "background-color: rgb(255, 255, 255);")
+        self.menu.setStyleSheet("")
+        self.statusbar.setStyleSheet("background-color: rgb(220, 220, 220)")
+        self.dockWidget_3.setStyleSheet("background-color: rgb(61, 98, 136);\n"
+                                        "color: rgb(255, 255, 255);\n"
+                                        "")
+        self.dockWidgetContents_3.setStyleSheet("background-color: rgb(105, 105, 157)")
+        self.lineEdit_3.setStyleSheet("background-color: rgb(255, 255, 255);border-radius:3px;")
+        self.pushButton_18.setStyleSheet("background-color: rgb(155, 183, 220);border-radius:5px;")
+        self.textBrowser.setStyleSheet(
+            "background-color: rgba(163, 201, 214, 150);color: rgb(0,0,0);border-radius:5px;")
+        self.pushButton_19.setStyleSheet("background-color: rgb(65, 97, 136);border-radius:5px;")
+        self.textBrowser_2.setStyleSheet("background-color: rgb(163, 201, 214, 150);\n"
+                                         "border-color: rgb(123, 180, 232);color: rgb(0,0,0);border-radius:5px;")
+        self.pushButton_21.setStyleSheet("background-color: rgb(65, 97, 136);border-radius:5px;")
+        self.textBrowser_3.setStyleSheet(
+            "background-color: rgba(163, 201, 214, 150);color: rgb(0,0,0);border-radius:5px;")
+        self.pushButton_20.setStyleSheet("background-color: rgb(65, 97, 136);border-radius:5px;")
+        self.dockWidget_4.setStyleSheet("background-color: rgb(61, 98, 136);color: rgb(255,255,255);")
+        self.dockWidgetContents_4.setStyleSheet("background-color: rgb(105, 105, 157);\n"
+                                                "border-color: rgb(123, 180, 232);")
+        self.widget_3.setStyleSheet(
+            "background-color: rgba(162, 202, 212, 150);border-radius:5px;border-color:rgb(109, 169, 223);border-width:3px;border-style:solid;color:rgb(0, 0, 0);")
+        self.label_18.setStyleSheet("border-width:2px;")
+        self.label_19.setStyleSheet("border-width:2px;")
+        self.widget_4.setStyleSheet(
+            "background-color: rgba(162, 202, 212, 150);border-radius:5px;border-color:rgb(109, 169, 223);border-width:3px;border-style:solid;color:rgb(0, 0, 0);")
+        self.label_24.setStyleSheet("border-width:2px;")
+        self.label_25.setStyleSheet("border-width:2px;")
+        self.widget_5.setStyleSheet(
+            "background-color: rgba(162, 202, 212, 150);border-radius:5px;border-color:rgb(109, 169, 223);border-width:3px;border-style:solid;color:rgb(0, 0, 0);")
+        self.label_26.setStyleSheet("border-width:2px;")
+        self.label_27.setStyleSheet("border-width:2px;")
+        self.pushButton.setStyleSheet("background-color: rgb(65, 97, 136);border-radius:5px;")
 
     def start(self):
         self.camera1 = self.join_path(self.all_photos(camera1_path))
@@ -368,30 +687,30 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         item = QtWidgets.QListWidgetItem(QtGui.QIcon(filename+'.jpg'), '')
         self.listWidget.addItem(item)
         self.count_fault += 1
-        # if self.count_fault < 4:
-        #     # index_fault_img = [self.label_15, self.label_16, self.label_17]
-        #     index_fault_tasks = [self.textBrowser, self.textBrowser_2, self.textBrowser_3]
-        #     index_fault_tasks_button = [self.pushButton_19, self.pushButton_21, self.pushButton_20]
-        #     index_fault_warn = [self.label_18, self.label_24, self.label_26]
-        #     index_fault_percent = [self.label_19, self.label_25, self.label_27]
+        if self.count_fault < 4:
+            # index_fault_img = [self.label_15, self.label_16, self.label_17]
+            index_fault_tasks = [self.textBrowser, self.textBrowser_2, self.textBrowser_3]
+            index_fault_tasks_button = [self.pushButton_19, self.pushButton_21, self.pushButton_20]
+            index_fault_warn = [self.label_18, self.label_24, self.label_26]
+            index_fault_percent = [self.label_19, self.label_25, self.label_27]
         #
         #     # index_fault_img[self.count_fault-1].setPixmap(QPixmap(filename+'.jpg'))
         #
-        #     with open(filename+'.txt', 'r', encoding='utf-8') as f:
-        #         info_list = f.read().split()
-        #     current_time = QDateTime.currentDateTime().toString("yyyy-MM-dd hh:mm:ss")
-        #     print(current_time)
+            with open(filename+'.txt', 'r', encoding='utf-8') as f:
+                info_list = f.read().split()
+            current_time = QDateTime.currentDateTime().toString("yyyy-MM-dd hh:mm:ss")
+            print(current_time)
         #
-        #     index_fault_tasks[self.count_fault-1].setHtml("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-        #                                           "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-        #                                           "</style></head><body style=\" font-family:\'SimSun\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-        #                                           "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">铸件编号：{}</p>\n"
-        #                                           "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">异常编号：{}</p>\n"
-        #                                           "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">异常类别：{}</p>\n"
-        #                                           "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">检测时间：{}</p></body></html>".format(dict['name'], self.count_fault, info_list[0], current_time))
-        #     index_fault_tasks_button[self.count_fault-1].setText('待处理')
-        #     index_fault_warn[self.count_fault-1].setText(f'异常{self.count_fault}')
-        #     index_fault_percent[self.count_fault-1].setText(f'{int(float(info_list[1])*10000)/100.0}%')
+            index_fault_tasks[self.count_fault-1].setHtml("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+                                                  "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+                                                  "</style></head><body style=\" font-family:\'SimSun\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+                                                  "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">铸件编号：{}</p>\n"
+                                                  "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">异常编号：{}</p>\n"
+                                                  "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">异常类别：{}</p>\n"
+                                                  "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">检测时间：{}</p></body></html>".format(dict['name'], self.count_fault, info_list[0], current_time))
+            index_fault_tasks_button[self.count_fault-1].setText('待处理')
+            index_fault_warn[self.count_fault-1].setText(f'异常{self.count_fault}')
+            index_fault_percent[self.count_fault-1].setText(f'{int(float(info_list[1])*10000)/100.0}%')
         # else:
         #     # my_push_button = QtWidgets.QPushButton(self.scrollArea)
         #     # my_push_button.setIcon(QtGui.QIcon(filename+'.jpg'))

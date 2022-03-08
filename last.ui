@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1222</width>
-    <height>877</height>
+    <width>1230</width>
+    <height>899</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -55,7 +55,7 @@ border-width: 2px;border-radius:5px;</string>
        <number>0</number>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="page">
        <property name="styleSheet">
@@ -516,12 +516,15 @@ border-width: 1px;border-radius:5px;</string>
       </widget>
       <widget class="QWidget" name="page_2">
        <property name="styleSheet">
-        <string notr="true">border-color: rgb(129, 242, 255);
-border-width: 0px;border-radius:5px;</string>
+        <string notr="true">background-color: rgb(30, 37, 48);
+border-width: 1px;border-radius:5px;</string>
        </property>
        <layout class="QHBoxLayout" name="horizontalLayout_4">
         <item>
          <widget class="QWidget" name="widget_2" native="true">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(30, 37, 48);</string>
+          </property>
           <layout class="QHBoxLayout" name="horizontalLayout_3">
            <item>
             <layout class="QVBoxLayout" name="verticalLayout_7" stretch="1,0,1,1,1,1,1,1,1,1,1,1,1">
@@ -813,11 +816,11 @@ border-width: 0px;border-radius:5px;</string>
       <widget class="QWidget" name="page_3">
        <property name="styleSheet">
         <string notr="true">border-color: rgb(129, 242, 255);
-border-width: 0px;border-radius:5px;</string>
+border-width: 1px;border-radius:5px;</string>
        </property>
        <layout class="QHBoxLayout" name="horizontalLayout_12">
         <item>
-         <layout class="QVBoxLayout" name="verticalLayout_13">
+         <layout class="QVBoxLayout" name="verticalLayout_13" stretch="5,2,5,5,5,5,5,5">
           <item>
            <widget class="QLabel" name="label_4">
             <property name="enabled">
@@ -893,7 +896,11 @@ border-width: 0px;border-radius:5px;</string>
             <item>
              <layout class="QHBoxLayout" name="horizontalLayout_15">
               <item>
-               <widget class="QLineEdit" name="lineEdit_4"/>
+               <widget class="QLineEdit" name="lineEdit_4">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(255, 255, 255);</string>
+                </property>
+               </widget>
               </item>
               <item>
                <widget class="QPushButton" name="pushButton_22">
@@ -1063,7 +1070,7 @@ p, li { white-space: pre-wrap; }
       <widget class="QWidget" name="page_4">
        <property name="styleSheet">
         <string notr="true">border-color: rgb(129, 242, 255);
-border-width: 0px;border-radius:5px;</string>
+border-width: 1px;border-radius:5px;</string>
        </property>
        <layout class="QHBoxLayout" name="horizontalLayout_35">
         <item>
@@ -1441,7 +1448,7 @@ border-width: 0px;border-radius:5px;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1222</width>
+     <width>1230</width>
      <height>21</height>
     </rect>
    </property>
@@ -1514,8 +1521,18 @@ background-color: rgb(255, 255, 255);</string>
     <property name="title">
      <string>设置</string>
     </property>
+    <widget class="QMenu" name="menu_6">
+     <property name="title">
+      <string>主题</string>
+     </property>
+     <addaction name="action_20"/>
+     <addaction name="action_21"/>
+     <addaction name="action_22"/>
+     <addaction name="action_23"/>
+    </widget>
     <addaction name="action_15"/>
     <addaction name="action_16"/>
+    <addaction name="menu_6"/>
    </widget>
    <widget class="QMenu" name="menu_5">
     <property name="title">
@@ -1995,16 +2012,6 @@ color:rgb(255,255,255);</string>
       </widget>
      </item>
      <item>
-      <widget class="Line" name="line">
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(105, 137, 187);</string>
-       </property>
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-      </widget>
-     </item>
-     <item>
       <widget class="QWidget" name="widget_4" native="true">
        <property name="styleSheet">
         <string notr="true">background-color: rgba(68, 70, 74, 150);border-radius:5px;border-color: rgb(125, 253, 255);border-width:2px;border-style:solid;color:rgb(255, 255, 255);</string>
@@ -2070,16 +2077,6 @@ color:rgb(255,255,255);</string>
          </layout>
         </item>
        </layout>
-      </widget>
-     </item>
-     <item>
-      <widget class="Line" name="line_4">
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(105, 137, 187);</string>
-       </property>
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
       </widget>
      </item>
      <item>
@@ -2322,6 +2319,26 @@ color:rgb(255,255,255);</string>
   <action name="action_4">
    <property name="text">
     <string>管理模型</string>
+   </property>
+  </action>
+  <action name="action_20">
+   <property name="text">
+    <string>蓝色主题</string>
+   </property>
+  </action>
+  <action name="action_21">
+   <property name="text">
+    <string>暗色主题</string>
+   </property>
+  </action>
+  <action name="action_22">
+   <property name="text">
+    <string>亮色主题</string>
+   </property>
+  </action>
+  <action name="action_23">
+   <property name="text">
+    <string>紫色主题</string>
    </property>
   </action>
  </widget>

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'last.ui'
+# Form implementation generated from reading ui file 'last_color_black.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.6
 #
@@ -14,8 +14,8 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1230, 899)
-        MainWindow.setStyleSheet("background-color:rgb(26, 29, 37)")
+        MainWindow.resize(1222, 895)
+        MainWindow.setStyleSheet("background-color:rgb(36, 36, 36)")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.horizontalLayout_14 = QtWidgets.QHBoxLayout(self.centralwidget)
@@ -26,11 +26,11 @@ class Ui_MainWindow(object):
         font.setFamily("黑体")
         font.setPointSize(10)
         self.stackedWidget.setFont(font)
-        self.stackedWidget.setStyleSheet("background-color: rgb(30, 37, 48);\n"
+        self.stackedWidget.setStyleSheet("background-color: rgb(68, 70, 74);\n"
 "color: rgb(255,255,255);\n"
-"border-color: rgb(125, 253, 255);\n"
+"border-color: rgb(134, 89, 52);\n"
 "border-style: solid;\n"
-"border-width: 2px;border-radius:5px;")
+"border-width: 3px;border-radius:5px;")
         self.stackedWidget.setInputMethodHints(QtCore.Qt.ImhNone)
         self.stackedWidget.setFrameShape(QtWidgets.QFrame.Box)
         self.stackedWidget.setFrameShadow(QtWidgets.QFrame.Plain)
@@ -38,13 +38,13 @@ class Ui_MainWindow(object):
         self.stackedWidget.setMidLineWidth(0)
         self.stackedWidget.setObjectName("stackedWidget")
         self.page = QtWidgets.QWidget()
-        self.page.setStyleSheet("background-color: rgb(30, 37, 48);\n"
+        self.page.setStyleSheet("border-color: rgb(129, 242, 255);\n"
 "border-width: 0px;border-radius:5px;")
         self.page.setObjectName("page")
         self.horizontalLayout_36 = QtWidgets.QHBoxLayout(self.page)
         self.horizontalLayout_36.setObjectName("horizontalLayout_36")
         self.widget = QtWidgets.QWidget(self.page)
-        self.widget.setStyleSheet("background-color: rgb(30, 37, 48);")
+        self.widget.setStyleSheet("background-color:rgb(59, 61, 65);")
         self.widget.setObjectName("widget")
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.widget)
         self.horizontalLayout.setObjectName("horizontalLayout")
@@ -64,7 +64,7 @@ class Ui_MainWindow(object):
         font.setKerning(True)
         font.setStyleStrategy(QtGui.QFont.PreferDefault)
         self.label_2.setFont(font)
-        self.label_2.setStyleSheet("background-color: rgb(49, 58, 75);\n"
+        self.label_2.setStyleSheet("background-color: rgb(68, 70, 74);\n"
 "broder-width : 0px;border-radius:5px;")
         self.label_2.setAlignment(QtCore.Qt.AlignCenter)
         self.label_2.setObjectName("label_2")
@@ -82,7 +82,7 @@ class Ui_MainWindow(object):
         font.setFamily("黑体")
         font.setPointSize(10)
         self.pushButton_2.setFont(font)
-        self.pushButton_2.setStyleSheet("background-color: rgb(65, 97, 136);\n"
+        self.pushButton_2.setStyleSheet("background-color: rgb(68, 70, 74);\n"
 "border-radius:5px;")
         self.pushButton_2.setObjectName("pushButton_2")
         self.horizontalLayout_2.addWidget(self.pushButton_2)
@@ -103,7 +103,7 @@ class Ui_MainWindow(object):
         font.setFamily("黑体")
         font.setPointSize(10)
         self.pushButton_15.setFont(font)
-        self.pushButton_15.setStyleSheet("background-color: rgb(65, 97, 136);border-radius:5px;")
+        self.pushButton_15.setStyleSheet("background-color: rgb(68, 70, 74);border-radius:5px;")
         self.pushButton_15.setObjectName("pushButton_15")
         self.horizontalLayout_2.addWidget(self.pushButton_15)
         self.label_13 = QtWidgets.QLabel(self.widget)
@@ -116,8 +116,8 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setFamily("黑体")
         self.groupBox_2.setFont(font)
-        self.groupBox_2.setStyleSheet("background-color: rgb(49, 58, 75);\n"
-"border-color: rgb(125, 253, 255);\n"
+        self.groupBox_2.setStyleSheet("background-color: rgb(59, 61, 65);\n"
+"border-color: rgb(134, 89, 52);\n"
 "border-style: solid;\n"
 "border-width: 1px;border-radius:5px;")
         self.groupBox_2.setAlignment(QtCore.Qt.AlignBottom|QtCore.Qt.AlignHCenter)
@@ -136,7 +136,7 @@ class Ui_MainWindow(object):
         font.setFamily("黑体")
         font.setPointSize(10)
         self.label_6.setFont(font)
-        self.label_6.setStyleSheet("border-color: rgb(125, 253, 255);")
+        self.label_6.setStyleSheet("background-color: rgb(68, 70, 74);")
         self.label_6.setScaledContents(True)
         self.label_6.setAlignment(QtCore.Qt.AlignCenter)
         self.label_6.setObjectName("label_6")
@@ -146,7 +146,7 @@ class Ui_MainWindow(object):
         font.setFamily("黑体")
         font.setPointSize(10)
         self.label_10.setFont(font)
-        self.label_10.setStyleSheet("border-color: rgb(125, 253, 255);")
+        self.label_10.setStyleSheet("background-color: rgb(68, 70, 74);")
         self.label_10.setScaledContents(True)
         self.label_10.setAlignment(QtCore.Qt.AlignCenter)
         self.label_10.setObjectName("label_10")
@@ -156,7 +156,7 @@ class Ui_MainWindow(object):
         font.setFamily("黑体")
         font.setPointSize(10)
         self.label_12.setFont(font)
-        self.label_12.setStyleSheet("border-color: rgb(125, 253, 255);")
+        self.label_12.setStyleSheet("background-color: rgb(68, 70, 74);")
         self.label_12.setScaledContents(True)
         self.label_12.setAlignment(QtCore.Qt.AlignCenter)
         self.label_12.setObjectName("label_12")
@@ -166,7 +166,7 @@ class Ui_MainWindow(object):
         font.setFamily("黑体")
         font.setPointSize(10)
         self.label_5.setFont(font)
-        self.label_5.setStyleSheet("background-color: rgb(49, 58, 75);")
+        self.label_5.setStyleSheet("background-color: rgb(68, 70, 74);")
         self.label_5.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.label_5.setFrameShadow(QtWidgets.QFrame.Raised)
         self.label_5.setLineWidth(4)
@@ -180,7 +180,7 @@ class Ui_MainWindow(object):
         font.setFamily("黑体")
         font.setPointSize(10)
         self.label_9.setFont(font)
-        self.label_9.setStyleSheet("border-color: rgb(125, 253, 255);")
+        self.label_9.setStyleSheet("background-color: rgb(68, 70, 74);")
         self.label_9.setScaledContents(True)
         self.label_9.setAlignment(QtCore.Qt.AlignCenter)
         self.label_9.setObjectName("label_9")
@@ -190,7 +190,7 @@ class Ui_MainWindow(object):
         font.setFamily("黑体")
         font.setPointSize(10)
         self.label_11.setFont(font)
-        self.label_11.setStyleSheet("border-color: rgb(125, 253, 255);")
+        self.label_11.setStyleSheet("background-color: rgb(68, 70, 74);")
         self.label_11.setScaledContents(True)
         self.label_11.setAlignment(QtCore.Qt.AlignCenter)
         self.label_11.setObjectName("label_11")
@@ -200,7 +200,7 @@ class Ui_MainWindow(object):
         font.setFamily("黑体")
         font.setPointSize(10)
         self.label_8.setFont(font)
-        self.label_8.setStyleSheet("border-color: rgb(125, 253, 255);")
+        self.label_8.setStyleSheet("background-color: rgb(68, 70, 74);")
         self.label_8.setScaledContents(True)
         self.label_8.setAlignment(QtCore.Qt.AlignCenter)
         self.label_8.setObjectName("label_8")
@@ -212,7 +212,7 @@ class Ui_MainWindow(object):
         font.setBold(False)
         font.setWeight(50)
         self.label_7.setFont(font)
-        self.label_7.setStyleSheet("border-color: rgb(125, 253, 255);")
+        self.label_7.setStyleSheet("background-color: rgb(68, 70, 74);")
         self.label_7.setScaledContents(True)
         self.label_7.setAlignment(QtCore.Qt.AlignCenter)
         self.label_7.setObjectName("label_7")
@@ -226,8 +226,8 @@ class Ui_MainWindow(object):
         self.groupBox.setFont(font)
         self.groupBox.setContextMenuPolicy(QtCore.Qt.DefaultContextMenu)
         self.groupBox.setLayoutDirection(QtCore.Qt.LeftToRight)
-        self.groupBox.setStyleSheet("background-color: rgb(49, 58, 75);\n"
-"border-color: rgb(125, 253, 255);\n"
+        self.groupBox.setStyleSheet("background-color: rgb(68, 70, 74);\n"
+"border-color: rgb(134, 89, 52);\n"
 "border-style: solid;\n"
 "border-width: 1px;border-radius:5px;")
         self.groupBox.setAlignment(QtCore.Qt.AlignBottom|QtCore.Qt.AlignHCenter)
@@ -238,7 +238,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_11.setContentsMargins(-1, 20, -1, -1)
         self.verticalLayout_11.setObjectName("verticalLayout_11")
         self.listWidget = QtWidgets.QListWidget(self.groupBox)
-        self.listWidget.setStyleSheet("background-color: rgb(30, 37, 48);")
+        self.listWidget.setStyleSheet("background-color:rgb(59, 61, 65);")
         self.listWidget.setFlow(QtWidgets.QListView.LeftToRight)
         self.listWidget.setObjectName("listWidget")
         self.verticalLayout_11.addWidget(self.listWidget)
@@ -251,13 +251,12 @@ class Ui_MainWindow(object):
         self.horizontalLayout_36.addWidget(self.widget)
         self.stackedWidget.addWidget(self.page)
         self.page_2 = QtWidgets.QWidget()
-        self.page_2.setStyleSheet("background-color: rgb(30, 37, 48);\n"
-"border-width: 1px;border-radius:5px;")
+        self.page_2.setStyleSheet("border-color: rgb(129, 242, 255);\n"
+"border-width: 0px;border-radius:5px;")
         self.page_2.setObjectName("page_2")
         self.horizontalLayout_4 = QtWidgets.QHBoxLayout(self.page_2)
         self.horizontalLayout_4.setObjectName("horizontalLayout_4")
         self.widget_2 = QtWidgets.QWidget(self.page_2)
-        self.widget_2.setStyleSheet("background-color: rgb(30, 37, 48);")
         self.widget_2.setObjectName("widget_2")
         self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.widget_2)
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
@@ -392,7 +391,7 @@ class Ui_MainWindow(object):
         self.stackedWidget.addWidget(self.page_2)
         self.page_3 = QtWidgets.QWidget()
         self.page_3.setStyleSheet("border-color: rgb(129, 242, 255);\n"
-"border-width: 1px;border-radius:5px;")
+"border-width: 0px;border-radius:5px;")
         self.page_3.setObjectName("page_3")
         self.horizontalLayout_12 = QtWidgets.QHBoxLayout(self.page_3)
         self.horizontalLayout_12.setObjectName("horizontalLayout_12")
@@ -428,7 +427,6 @@ class Ui_MainWindow(object):
         self.horizontalLayout_15 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_15.setObjectName("horizontalLayout_15")
         self.lineEdit_4 = QtWidgets.QLineEdit(self.page_3)
-        self.lineEdit_4.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.lineEdit_4.setObjectName("lineEdit_4")
         self.horizontalLayout_15.addWidget(self.lineEdit_4)
         self.pushButton_22 = QtWidgets.QPushButton(self.page_3)
@@ -490,19 +488,11 @@ class Ui_MainWindow(object):
         self.pushButton_14.setObjectName("pushButton_14")
         self.horizontalLayout_30.addWidget(self.pushButton_14)
         self.verticalLayout_13.addLayout(self.horizontalLayout_30)
-        self.verticalLayout_13.setStretch(0, 5)
-        self.verticalLayout_13.setStretch(1, 2)
-        self.verticalLayout_13.setStretch(2, 5)
-        self.verticalLayout_13.setStretch(3, 5)
-        self.verticalLayout_13.setStretch(4, 5)
-        self.verticalLayout_13.setStretch(5, 5)
-        self.verticalLayout_13.setStretch(6, 5)
-        self.verticalLayout_13.setStretch(7, 5)
         self.horizontalLayout_12.addLayout(self.verticalLayout_13)
         self.stackedWidget.addWidget(self.page_3)
         self.page_4 = QtWidgets.QWidget()
         self.page_4.setStyleSheet("border-color: rgb(129, 242, 255);\n"
-"border-width: 1px;border-radius:5px;")
+"border-width: 0px;border-radius:5px;")
         self.page_4.setObjectName("page_4")
         self.horizontalLayout_35 = QtWidgets.QHBoxLayout(self.page_4)
         self.horizontalLayout_35.setObjectName("horizontalLayout_35")
@@ -638,7 +628,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_14.addWidget(self.stackedWidget)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 1230, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1222, 21))
         font = QtGui.QFont()
         font.setFamily("黑体")
         self.menubar.setFont(font)
@@ -682,13 +672,13 @@ class Ui_MainWindow(object):
         font.setFamily("黑体")
         self.dockWidget_3.setFont(font)
         self.dockWidget_3.setAutoFillBackground(False)
-        self.dockWidget_3.setStyleSheet("background-color:rgb(26, 29, 37);\n"
+        self.dockWidget_3.setStyleSheet("background-color: rgb(36, 36, 36);\n"
 "color: rgb(255, 255, 255);\n"
 "")
         self.dockWidget_3.setFloating(False)
         self.dockWidget_3.setObjectName("dockWidget_3")
         self.dockWidgetContents_3 = QtWidgets.QWidget()
-        self.dockWidgetContents_3.setStyleSheet("background-color: rgb(30, 37, 48);")
+        self.dockWidgetContents_3.setStyleSheet("background-color: rgb(59, 61, 65)")
         self.dockWidgetContents_3.setObjectName("dockWidgetContents_3")
         self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.dockWidgetContents_3)
         self.verticalLayout_4.setObjectName("verticalLayout_4")
@@ -700,6 +690,7 @@ class Ui_MainWindow(object):
         font.setFamily("黑体")
         self.lineEdit_3.setFont(font)
         self.lineEdit_3.setStyleSheet("background-color: rgb(255, 255, 255);border-radius:3px;")
+        self.lineEdit_3.setText("")
         self.lineEdit_3.setObjectName("lineEdit_3")
         self.horizontalLayout_13.addWidget(self.lineEdit_3)
         self.pushButton_18 = QtWidgets.QPushButton(self.dockWidgetContents_3)
@@ -718,7 +709,7 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setFamily("黑体")
         self.textBrowser.setFont(font)
-        self.textBrowser.setStyleSheet("background-color: rgba(68, 70, 74, 150);color: rgb(255,255,255);border-radius:5px;border-style:solid;border-width:2px;border-color: rgb(125, 253, 255);\n"
+        self.textBrowser.setStyleSheet("background-color: rgba(68, 70, 74, 150);color: rgb(255,255,255);border-radius:5px;border-style:solid;border-width:2px;border-color: rgb(134, 89, 52)\n"
 "")
         self.textBrowser.setFrameShape(QtWidgets.QFrame.Box)
         self.textBrowser.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -747,7 +738,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_17.addItem(spacerItem23)
         self.verticalLayout.addLayout(self.horizontalLayout_17)
         self.textBrowser_2 = QtWidgets.QTextBrowser(self.dockWidgetContents_3)
-        self.textBrowser_2.setStyleSheet("background-color: rgba(68, 70, 74, 150);color: rgb(255,255,255);border-radius:5px;border-style:solid;border-width:2px;border-color: rgb(125, 253, 255);")
+        self.textBrowser_2.setStyleSheet("background-color: rgba(68, 70, 74, 150);color: rgb(255,255,255);border-radius:5px;border-style:solid;border-width:2px;border-color: rgb(134, 89, 52)\n"
+"")
         self.textBrowser_2.setFrameShape(QtWidgets.QFrame.Box)
         self.textBrowser_2.setFrameShadow(QtWidgets.QFrame.Raised)
         self.textBrowser_2.setObjectName("textBrowser_2")
@@ -770,7 +762,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_23.addItem(spacerItem25)
         self.verticalLayout.addLayout(self.horizontalLayout_23)
         self.textBrowser_3 = QtWidgets.QTextBrowser(self.dockWidgetContents_3)
-        self.textBrowser_3.setStyleSheet("background-color: rgba(68, 70, 74, 150);color: rgb(255,255,255);border-radius:5px;border-style:solid;border-width:2px;border-color: rgb(125, 253, 255);\n"
+        self.textBrowser_3.setStyleSheet("background-color: rgba(68, 70, 74, 150);color: rgb(255,255,255);border-radius:5px;border-style:solid;border-width:2px;border-color: rgb(134, 89, 52)\n"
 "")
         self.textBrowser_3.setFrameShape(QtWidgets.QFrame.Box)
         self.textBrowser_3.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -804,16 +796,15 @@ class Ui_MainWindow(object):
         self.dockWidget_4.setFont(font)
         self.dockWidget_4.setMouseTracking(True)
         self.dockWidget_4.setAutoFillBackground(False)
-        self.dockWidget_4.setStyleSheet("background-color:rgb(26, 29, 37);\n"
-"color:rgb(255,255,255);")
+        self.dockWidget_4.setStyleSheet("background-color: rgb(36, 36, 36);color: rgb(255,255,255);")
         self.dockWidget_4.setObjectName("dockWidget_4")
         self.dockWidgetContents_4 = QtWidgets.QWidget()
-        self.dockWidgetContents_4.setStyleSheet("background-color: rgb(30, 37, 48);")
+        self.dockWidgetContents_4.setStyleSheet("background-color: rgb(59, 61, 65);")
         self.dockWidgetContents_4.setObjectName("dockWidgetContents_4")
         self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.dockWidgetContents_4)
         self.verticalLayout_3.setObjectName("verticalLayout_3")
         self.widget_3 = QtWidgets.QWidget(self.dockWidgetContents_4)
-        self.widget_3.setStyleSheet("background-color: rgba(68, 70, 74, 150);border-radius:5px;border-color: rgb(125, 253, 255);border-width:2px;border-style:solid;color:rgb(255, 255, 255);")
+        self.widget_3.setStyleSheet("background-color: rgba(68, 70, 74, 150);border-radius:5px;border-color: rgb(134, 89, 52);border-width:3px;border-style:solid;color:rgb(255, 255, 255);")
         self.widget_3.setObjectName("widget_3")
         self.horizontalLayout_41 = QtWidgets.QHBoxLayout(self.widget_3)
         self.horizontalLayout_41.setObjectName("horizontalLayout_41")
@@ -825,7 +816,7 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setFamily("黑体")
         self.label_18.setFont(font)
-        self.label_18.setStyleSheet("border-width:1px;")
+        self.label_18.setStyleSheet("border-width:2px;")
         self.label_18.setObjectName("label_18")
         self.horizontalLayout_7.addWidget(self.label_18)
         spacerItem28 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
@@ -834,13 +825,13 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setFamily("黑体")
         self.label_19.setFont(font)
-        self.label_19.setStyleSheet("border-width:1px;")
+        self.label_19.setStyleSheet("border-width:2px;")
         self.label_19.setObjectName("label_19")
         self.horizontalLayout_7.addWidget(self.label_19)
         self.horizontalLayout_41.addLayout(self.horizontalLayout_7)
         self.verticalLayout_3.addWidget(self.widget_3)
         self.widget_4 = QtWidgets.QWidget(self.dockWidgetContents_4)
-        self.widget_4.setStyleSheet("background-color: rgba(68, 70, 74, 150);border-radius:5px;border-color: rgb(125, 253, 255);border-width:2px;border-style:solid;color:rgb(255, 255, 255);")
+        self.widget_4.setStyleSheet("background-color: rgba(68, 70, 74, 150);border-radius:5px;border-color: rgb(134, 89, 52);border-width:3px;border-style:solid;color:rgb(255, 255, 255);")
         self.widget_4.setObjectName("widget_4")
         self.horizontalLayout_42 = QtWidgets.QHBoxLayout(self.widget_4)
         self.horizontalLayout_42.setObjectName("horizontalLayout_42")
@@ -852,7 +843,7 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setFamily("黑体")
         self.label_24.setFont(font)
-        self.label_24.setStyleSheet("border-width:1px;")
+        self.label_24.setStyleSheet("border-width:2px;")
         self.label_24.setObjectName("label_24")
         self.horizontalLayout_10.addWidget(self.label_24)
         spacerItem29 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
@@ -861,13 +852,13 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setFamily("黑体")
         self.label_25.setFont(font)
-        self.label_25.setStyleSheet("border-width:1px;")
+        self.label_25.setStyleSheet("border-width:2px;")
         self.label_25.setObjectName("label_25")
         self.horizontalLayout_10.addWidget(self.label_25)
         self.horizontalLayout_42.addLayout(self.horizontalLayout_10)
         self.verticalLayout_3.addWidget(self.widget_4)
         self.widget_5 = QtWidgets.QWidget(self.dockWidgetContents_4)
-        self.widget_5.setStyleSheet("background-color: rgba(68, 70, 74, 150);border-radius:5px;border-color: rgb(125, 253, 255);border-width:2px;border-style:solid;color:rgb(255, 255, 255);")
+        self.widget_5.setStyleSheet("background-color: rgba(68, 70, 74, 150);border-radius:5px;border-color: rgb(134, 89, 52);border-width:3px;border-style:solid;color:rgb(255, 255, 255);")
         self.widget_5.setObjectName("widget_5")
         self.horizontalLayout_43 = QtWidgets.QHBoxLayout(self.widget_5)
         self.horizontalLayout_43.setObjectName("horizontalLayout_43")
@@ -879,7 +870,7 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setFamily("黑体")
         self.label_26.setFont(font)
-        self.label_26.setStyleSheet("border-width:1px;")
+        self.label_26.setStyleSheet("border-width:2px;")
         self.label_26.setObjectName("label_26")
         self.horizontalLayout_11.addWidget(self.label_26)
         spacerItem30 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
@@ -888,7 +879,7 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setFamily("黑体")
         self.label_27.setFont(font)
-        self.label_27.setStyleSheet("border-width:1px;")
+        self.label_27.setStyleSheet("border-width:2px;")
         self.label_27.setObjectName("label_27")
         self.horizontalLayout_11.addWidget(self.label_27)
         self.horizontalLayout_43.addLayout(self.horizontalLayout_11)
@@ -999,7 +990,7 @@ class Ui_MainWindow(object):
         self.menubar.addAction(self.menu_5.menuAction())
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(3)
+        self.stackedWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
