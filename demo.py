@@ -765,7 +765,7 @@ class MyWindow(QMainWindow, Ui_MainWindow):
                 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">异常编号：{}</p>\n"
                 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">异常类别：{}</p>\n"
                 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">检测时间：{}</p></body></html>".format(
-                    dict['name'], self.count_fault, info_list[0], current_time))
+                    dict_task['name'], self.count_fault, info_list[0], current_time))
             index_fault_tasks_button[self.count_fault - 1].setText('待处理')
             index_fault_warn[self.count_fault - 1].setText(f'异常{self.count_fault}')
             index_fault_percent[self.count_fault - 1].setText(f'{int(float(info_list[1]) * 10000) / 100.0}%')
